@@ -1,0 +1,157 @@
+section
+    font-family: arial, san-serif
+    display: grid
+    grid-template-columns: 62% 38%
+
+#video-container
+    padding: 1.5rem 1rem 1.5rem 1.5rem
+    #video
+        video
+            width: 100%
+
+#video-container-header
+    padding: 0.5rem 0 0.5rem 0
+    #video-container-header-title
+        font-weight: bold
+        font-size: 120%
+        padding: 0.5rem 0 0.5rem 0
+
+#video-container-header-info
+    display: flex
+    justify-content: space-between
+    #video-container-view
+            padding: 0.2rem
+            padding-top: 0.8rem
+    #video-container-attribute
+        color: rgb(120, 120, 120)
+        display: flex
+        flex-direction: columns
+        div
+            padding: 0.2rem
+            padding-left: 0.5rem
+            padding-right: 0.5rem
+            text-align: center
+            span:nth-child(1)
+                padding: 0.3rem
+                font-size: 1.5rem
+        div:nth-child(n+2)
+            span:nth-child(2)
+                padding-left: 0.5rem
+        div:nth-child(5)
+            span
+                padding-left: 0.5rem
+                padding-right: 0.5rem
+                border-radius: 100px
+            span:active
+                background-color: rgb(220, 220, 220)
+        
+#video-container-user
+    padding-top: 0.5rem
+    padding-bottom: 0.5rem
+    display: flex
+    justify-content: space-between
+    #container-user
+        display: flex
+        flex-direction: row
+        div:nth-child(1)
+            padding-right: 0.5rem
+            span
+                background-color: black
+                border-radius: 100px
+                padding: 0.25rem 0.5rem 0.25rem 0.5rem
+                color: white
+                font-size: 2rem
+        div
+            div:nth-child(1)
+                font-weight: bold
+            div:nth-child(2)
+                color: rgb(120, 120, 120)
+            padding-left: 0.5rem
+            padding-top: 0.2rem
+            padding-bottom: 0.2rem
+            #container-user-comment
+                line-height: 1.5rem
+                padding-top: 1.2rem
+                padding-bottom: 0.5rem
+
+    div:nth-child(2)
+        button
+            background-color: rgb(226, 0, 0)
+            color: white
+            border: none
+            font-weight: bold
+            border-radius: 3px
+            width: 7.5rem
+            height: 2.5rem
+
+#video-container-comment
+    padding-top: 1rem
+    padding-bottom: 1rem
+    #video-container-comment-header
+        display: flex
+        flex-direction: row
+        padding-bottom: 1rem
+        #video-container-comment-counter
+            font-size: 1.3rem
+            padding-right: 1.5rem
+        #video-container-comment-sort
+            color: rgb(120, 120, 120)
+            span
+                padding-left: 0.5rem
+                padding-right: 0.5rem
+                font-size: 1.3rem
+    #video-container-comment-content
+        display: flex
+        flex-direction: column
+        padding-bottom: 1rem
+        padding-top: 1rem
+        .comment-flex
+            width:100%
+            display: flex
+            flex-direction: row
+            padding-top: 1rem
+            padding-bottom: 1rem
+            #content-user
+                div:nth-child(1)
+                    span
+                        font-size: 2rem
+                        background-color: black
+                        color: white
+                        padding: 0.25rem 0.5rem 0.25rem 0.5rem
+                        border-radius: 100%
+            #content-content
+                div:nth-child(1)
+                    span:nth-child(1)
+                        font-weight: bold
+                        padding-left: 1rem
+                    span:nth-child(2)
+                        padding-left: 0.5rem
+                        font-size: 90%
+                        color: rgb(140, 140, 140)
+                div:nth-child(2)
+                    padding: 0rem 0.5rem 0.25rem 1rem
+                
+#list-container
+    padding: 1rem 0rem 1rem 0rem
+    #container-video
+        display: grid
+        grid-template-columns: 50% 50%
+        grid-column-gap: 2%
+        padding: 0.5rem 0rem 0.5rem 0rem
+        #container-video-video
+            padding: 0 0.5rem 0 0.5rem
+            video
+                width: 100%
+        #container-video-attribute
+            width: 20rem
+            display: flex
+            flex-direction: column
+            div
+                padding: 0 0 0.5rem 0
+            div:nth-child(1)
+                font-weight: bold
+            div:nth-child(2)
+                color: rgb(140, 140, 140)
+            div:nth-child(3)
+                color: rgb(140, 140, 140)
+

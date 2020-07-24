@@ -1,0 +1,329 @@
+header
+    position: sticky
+    z-index: 1
+    top: 0
+    margin: 0
+    padding: 0
+
+#header-sticky
+    background-color: white
+    padding-bottom: 0.7em
+    top: 0
+    
+#logo
+    left: 0
+    height: 2.75em
+    width: 7.5em
+
+.icon
+    margin-top: 1.4em
+    margin-left: 1.2em
+    margin-right: 2em
+    margin-bottom: 0.8em
+    height: 1em
+    width: 1.5em
+
+.icon-user
+    margin-left: 1em
+    margin-right: 1em
+    margin-top: 0.9em
+    height: 1.5em
+    width: 1.5em
+
+#sign-in-button
+    cursor: pointer
+    margin-left: 1rem
+    margin-top: 0.6em
+    width: 8em
+    height: 3em
+    background-color: white
+    border: solid 1px
+    border-color: blue
+    img
+        margin-top: 0.4em
+        width: 6em
+        height: 2em
+
+#nav-bar
+    position: sticky
+    top: 0px
+    display: flex
+    z-index: 0
+    justify-content: space-between
+    height: 3em
+    background-color: white
+    span:hover
+        cursor: pointer
+    #search
+        margin-top: 1em
+    #kiri
+        margin-left: 1em
+    #kanan
+        margin-right: 2em
+        span:active:nth-child(-n+3)
+            padding-top: 1rem
+            padding-bottom: 0.5rem
+            border-radius: 1rem
+            background-color: rgb(240, 240, 240)
+
+#search-box
+    margin-top: 0.65em
+    margin-right: 0
+    input
+        height: 2.05em
+        width: 40em
+    button
+        margin-left: -1em
+        height: 2.5em
+        width: 5em
+        img
+            margin: 0
+            padding: 0
+            height: 0.75em
+            width: 1em
+
+#sidebar-hide
+    display: none
+    a
+        text-decoration: none
+        color: black
+    #sidebar
+        z-index: 2
+        font-family: arial, san-serif
+        position: fixed
+        width: 100%
+        height: 100%
+        display: flex
+        justify-content: left
+        .container
+            overflow-y: scroll
+            width: 25%
+            height: 100%
+            background-color: white
+            .container-header
+                display: flex
+                justify-content: left
+                align-items: center
+                span
+                    cursor: pointer
+                    .icon
+                        width: 1.5rem
+                        height: 1rem
+                    .yutub
+                        margin-top: 0.4rem
+                        width: 8rem
+                        height: 3rem
+            .container-title
+                div:hover
+                    background-color: rgb(240, 240, 240)
+                display: flex
+                flex-direction: column
+                div
+                    padding-top: 0.8rem
+                    padding-bottom: 0.5rem
+                    cursor: pointer
+                    img
+                        width: 1.25rem
+                        height: 1.25rem
+                    display: flex
+                    align-item: center
+                    font-size: 100%
+                    padding-left: 2rem
+                    padding-top: 0.5rem
+                    background-color: white
+                    .word
+                        margin-top: 0.2rem
+                        margin-left: 2rem
+            .container-content
+                div:hover
+                    background-color: rgb(240, 240, 240)
+                display: flex
+                flex-direction: column
+                div
+                    padding-top: 0.8rem
+                    padding-bottom: 0.5rem
+                    cursor: pointer
+                    img
+                        width: 1.25rem
+                        height: 1.25rem
+                    display: flex
+                    align-item: center
+                    font-size: 100%
+                    padding-left: 2rem
+                    padding-top: 0.5rem
+                    background-color: white
+                    .word
+                        margin-top: 0.2rem
+                        margin-left: 2rem
+            .container-premium
+                div:hover
+                    background-color: rgb(240, 240, 240)
+                display: flex
+                flex-direction: column
+                div
+                    padding-top: 1rem
+                    padding-bottom: 0.5rem
+                    cursor: pointer
+                    img
+                        width: 1.25rem
+                        height: 1.6rem
+                    display: flex
+                    align-item: center
+                    font-size: 100%
+                    padding-left: 2rem
+                    padding-top: 0.5rem
+                    background-color: white
+                    .word
+                        margin-top: 0.2rem
+                        margin-left: 2rem
+            .container-link
+                margin-left: 1.5rem
+                font-size: 90%
+                font-weight: bold
+                a
+                    margin-left: 0.5rem
+                    text-decoration: none
+        .blank
+            opacity: 50%
+            width: 100%
+            height: 100%
+            background-color: black
+
+#setting
+    display: none
+    z-index: 2
+    width: 25%
+    left: 62.5%
+    top: 3.6rem
+    position: absolute
+    .setting-container
+        font-family: arial, san-serif
+        border-left: solid 0.5px
+        border-right: solid 0.5px
+        border-color: rgb(200, 200, 200)
+        background-color: white
+        #setting-container-main
+            display: block
+            flex-direction: column
+            div:hover
+                cursor: pointer
+                background-color: rgb(240, 240, 240)
+            hr
+                width: 100%
+            div
+                display: flex
+                padding-top: 1rem
+                padding-bottom: 1rem
+                padding-left: 3rem
+                span
+                    display: flex
+                    align-items: center
+                    padding-right: 2rem
+                    img
+                        width: 1.5rem
+                        height: 1.5rem
+                .setting-container-arrow
+                    padding-right: 0.6rem
+                    padding-left: 0.6rem
+                    padding-top: 0.3rem
+                    padding-bottom: 0.3rem
+                    border-radius: 100px
+                    margin-left: 5rem
+                    background-color: rgb(230, 230, 230)
+                font-size: 100%        
+        #setting-container-location
+            display: none
+            flex-direction: column
+            cursor: pointer
+            .back
+                padding-left: 1.8rem
+            div
+                display: flex
+                padding-top: 1rem
+                padding-bottom: 1rem
+                padding-left: 3rem
+                span
+                    display: flex
+                    align-items: center
+                    padding-right: 2rem
+                    padding-left: 2rem
+                img
+                    margin-left: 0%
+                    width: 1.5rem
+                    height: 1.5rem
+            div:hover
+                background-color: rgb(240, 240, 240)
+            hr
+                width: 100%
+        #setting-container-restricted
+            display: none
+            .back
+                padding-left: 1.8rem
+            div
+                display: flex
+                padding-top: 1rem
+                padding-bottom: 1rem
+                padding-left: 3rem
+                span
+                    display: flex
+                    align-items: center
+                    padding-right: 2rem
+                    padding-left: 2rem
+                img
+                    margin-left: 0%
+                    width: 1.5rem
+                    height: 1.5rem
+            hr
+                width: 100%
+            div:hover
+                background-color: rgb(240, 240, 240)
+            #setting-container-restricted-slider
+                margin-left: 2rem
+                input
+                    cursor: pointer
+                    transform: scale(1.5)
+#shortcut
+    width: 100%
+    font-family: arial, san-serif
+    background-color: rgb(0, 0, 0, 0.6)
+    position: absolute
+    top: 0
+    display: none
+    #setting-shortcut
+        margin: 3%
+        background-color: white
+        #setting-shortcut-header
+            padding-top: 0.4rem
+            padding-left: 2rem
+        #setting-shortcut-content
+            height: 27rem
+            margin-left: 5%
+            display: grid
+            grid-gap: 5%
+            grid-template-columns: 45% 45%
+            .shortcut-content-header
+                padding-top: 0.5rem
+                padding-bottom: 0.5rem
+                div:nth-child(1)
+                    font-weight: bold
+            .shortcut-content-content
+                div
+                    padding: 0.25rem
+                    display: grid
+                    grid-template-columns: 70% 30%
+        #setting-shortcut-footer
+            display: flex
+            flex-direction: row-reverse
+            span
+                cursor: pointer
+                h2
+                    color: blue
+                margin-right: 2.5rem
+                margin-bottom: 0.5rem
+                padding-right: 0.5rem
+                padding-left: 0.5rem
+            span:active
+                background-color: rgb(240, 240, 240)
+                border-radius: 100px
+
+
