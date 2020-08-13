@@ -1,0 +1,49 @@
+
+type Video {
+    videoID: ID!
+    userID: ID!
+    title: String
+    views: Int
+    day: Int
+    month: Int
+    year: Int
+    like: Int
+    dislike: Int
+    descriptions: String
+    sourceLink : String
+    category: String
+    videoLength: Int
+    restriction: Boolean
+    premium: Boolean
+}
+
+extend type Query {
+    Videos(videoID: ID!): Video
+    listVideos: [Video!]!
+}
+
+input newVideo {
+    videoID: ID!
+    userID: ID!
+    title: String
+    day: Int
+    Month: Int
+    Year: Int
+    descriptions: String
+    sourceLink: String
+    category: String
+    VideoLength: Int
+    restriction: Boolean
+    premium: Boolean
+}
+
+extend  type Mutation {
+    createVideo(input: newVideo): Boolean
+    updateViews(VideoID: ID!, views: Int): Boolean
+    updateLike(VideoID: ID!, like: Int): Boolean
+    updateDislike(VideoID: ID!, dislike: Int): Boolean
+    updateDescription(VideoID: ID!, descriptions: String): Boolean
+    updateRestriction(VideoID: ID!, restriction: Boolean): Boolean
+    updatePremiumVideo(VideoID: ID!, premium: Boolean): Boolean
+    removeVideo(VideoID: ID!): Boolean
+}

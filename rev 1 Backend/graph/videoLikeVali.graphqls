@@ -1,0 +1,23 @@
+type VideoLikeVali {
+    userID: ID!
+    videoID: ID!
+    like: Boolean!
+    dislike: Boolean!
+}
+
+input newVideoLikeVali {
+    userID: ID!
+    videoID: ID!
+    like: Boolean!
+    dislike: Boolean!
+}
+
+extend type Query {
+    videoLikeVali(userID: ID!, videoID: ID!): VideoLikeVali
+}
+
+extend type Mutation {
+    createVideoLikeVali(input: newVideoLikeVali): Boolean
+    updateVideoLikeVali(videoID: ID!, userID: ID!, like: Boolean): Boolean
+    updateVideoDislikeVali(videoID: ID!, userID: ID!, dislike: Boolean): Boolean
+}

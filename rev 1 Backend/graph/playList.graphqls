@@ -1,0 +1,25 @@
+type Playlist {
+    playlistID: ID!
+    userID: ID!
+    videoID: ID!
+    priorityWeight: Int
+}
+
+input newPlaylist {
+    playlistID: ID!
+    userID: ID!
+    videoID: ID!
+    priorityWeight: Int
+}
+
+extend type Query{
+    playlist: [Playlist]
+    priorityNumber(playlistID: ID!): Playlist
+}
+
+extend type Mutation {
+    createPlaylist(input: newPlaylist): Boolean
+    updatePriorityWeight(playlistID: ID!, priorityWeight: Int): Boolean
+    deleteVideo(playlistID: ID!, videoID: Int): Boolean
+    deletePlaylist(playListID: ID!): Boolean
+}

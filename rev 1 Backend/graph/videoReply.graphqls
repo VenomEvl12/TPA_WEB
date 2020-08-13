@@ -1,0 +1,34 @@
+type VideoReply {
+    replyID: ID!
+    userID: ID!
+    videoID: ID!
+    likes: Int!
+    day: Int!
+    month: Int!
+    year: Int!
+    dislikes: Int!
+    description: String!
+}
+
+input newVideoReply {
+    replyID: ID!
+    userID: ID!
+    videoID: ID!
+    day: Int!
+    month: Int!
+    year: Int!
+    description: String!
+}
+
+extend type Query {
+    videoReplies: [VideoReply!]!
+    videoReply(userID: ID!, videoID: ID!): VideoReply!
+}
+
+extend type Mutation {
+    createVideoReply(input: newVideoReply): VideoReply
+    updateReplyLikes(replyID: ID!, likes: Int): Boolean
+    updateReplyDislikes(replyID: ID!, dislikes: Int): Boolean
+    updateReplyDescription(replyID: ID!, description: String): Boolean
+    deleteReply(replyID: ID!): Boolean
+}

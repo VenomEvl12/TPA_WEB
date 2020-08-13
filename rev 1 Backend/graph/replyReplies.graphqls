@@ -1,0 +1,29 @@
+type ReplyReplies {
+    replyRepliesID: ID!
+    replyID: ID!
+    userID: ID!
+    like: Int!
+    dislike: Int!
+    description: String!
+}
+
+input newReplyReplies {
+    replyRepliesID: ID!
+    replyID: ID!
+    userID: ID!
+    like: Int!
+    dislike: Int!
+    description: String!
+}
+
+extend type Query {
+    replyReply(replyRepliesID: ID!): ReplyReplies!
+    listReplyReply: [ReplyReplies!]!
+}
+
+extend type Mutation {
+    createReplyReplies(input: newReplyReplies!): ReplyReplies
+    updateReplyRepliesLikes(replyRepliesID: ID!, like: Int!): Boolean
+    updateReplyRepliesDislikes(replyRepliesID: ID!, dislike: Int!): Boolean
+    deleteReplyReplies(replyRepliesID: ID!): Boolean
+}

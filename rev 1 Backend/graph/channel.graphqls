@@ -1,0 +1,29 @@
+type Channel {
+    channelID: ID!
+    userID: ID!
+    viewCount: Int
+    location: String
+    channelDescription: String
+    ChannelImage: String
+}
+
+input newChannel {
+    channelID: ID!
+    userID: ID!
+    viewCount: Int
+    location: String
+    channelDescription: String
+    channelImage: String
+}
+
+extend type Query {
+    getChannel(userID: ID!): Channel
+}
+
+extend type Mutation{
+    createChannel(input: newChannel): Boolean
+    updateChannelView(channelID: ID!, viewCount: Int): Boolean
+    updateChannelLocation(channelID: ID!, location: String): Boolean
+    updateChannelDescription(channelID: ID!, description: String): Boolean
+    updateChannelImage(channelID: ID!, channelImage: String): Boolean
+}

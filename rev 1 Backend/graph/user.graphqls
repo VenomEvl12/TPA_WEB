@@ -1,0 +1,29 @@
+type User {
+    id: ID!
+    email: String
+    username: String
+    premium: Boolean
+    location: String
+    subscribers : Int
+    premiumDayCount: Int
+}
+
+extend type Query{
+    Users(email: String!): User
+}
+
+input newUser {
+    id: ID!
+    email: String
+    username: String
+    location: String
+}
+
+extend type Mutation {
+    createUser(input: newUser): User
+    updatePremium(id: ID!, premium: Boolean): Boolean
+    updatePremiumCountDay(id: ID!, premiumDayCount: Int): Boolean
+    updateLocation(id: ID!, location: String): Boolean
+    updateSubscribers(id: ID!, subscribers: Int): Boolean
+    deleteComputer(id: ID!): Boolean
+}
