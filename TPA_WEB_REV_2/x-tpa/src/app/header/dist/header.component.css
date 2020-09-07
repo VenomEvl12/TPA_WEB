@@ -1,0 +1,535 @@
+header {
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  outline: none;
+}
+
+hr {
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #dfdfdf;
+}
+
+#header-sticky {
+  background-color: white;
+  padding-bottom: 0.7em;
+  top: 0;
+}
+
+#logo {
+  left: 0;
+  height: 2.75em;
+  width: 7.5em;
+}
+
+.icon {
+  margin-top: 1.4em;
+  margin-left: 1.2em;
+  margin-right: 2em;
+  margin-bottom: 0.8em;
+  height: 1em;
+  width: 1.5em;
+}
+
+.icon-user {
+  margin-left: 1em;
+  margin-right: 1em;
+  height: 1.5em;
+  width: 1.5em;
+}
+
+#sign-in-button {
+  cursor: pointer;
+  margin-left: 1rem;
+  margin-top: 0.6em;
+  width: 8em;
+  height: 3em;
+  background-color: white;
+  border: solid 1px;
+  border-color: blue;
+}
+#sign-in-button img {
+  margin-top: 0.4em;
+  width: 6em;
+  height: 2em;
+}
+
+#nav-bar {
+  position: sticky;
+  top: 0px;
+  display: flex;
+  z-index: 0;
+  justify-content: space-between;
+  height: 3em;
+  background-color: white;
+}
+#nav-bar span:hover {
+  cursor: pointer;
+}
+#nav-bar #search {
+  margin-top: 0.4em;
+}
+#nav-bar #kiri {
+  margin-left: 1em;
+}
+#nav-bar #kanan {
+  margin-top: 1%;
+  display: flex;
+  align-items: center;
+  margin-right: 2em;
+}
+#nav-bar #kanan span:active:nth-child(-n+3) {
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+  border-radius: 1rem;
+  background-color: #f0f0f0;
+}
+
+#search-box {
+  margin-top: 0.6em;
+  margin-right: 0;
+}
+#search-box input {
+  box-shadow: inset 0 0 3px #c7c7c7;
+  margin-top: 0.3em;
+  height: 1.7em;
+  width: 35em;
+  border: 1px solid;
+  font-size: 110%;
+  border-color: #cacaca;
+}
+#search-box button {
+  border-top-right-radius: 5%;
+  border-bottom-right-radius: 5%;
+  background-color: whitesmoke;
+  padding-bottom: 0em;
+  margin-left: -1em;
+  height: 2.6em;
+  width: 5em;
+  border: 1px solid;
+  border-color: #cacaca;
+}
+#search-box button img {
+  margin: 0;
+  padding: 0;
+  height: 0.75em;
+  width: 1em;
+}
+
+#sidebar-hide {
+  display: none;
+}
+#sidebar-hide a {
+  text-decoration: none;
+  color: black;
+}
+#sidebar-hide #sidebar {
+  z-index: 2;
+  font-family: arial, san-serif;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: left;
+}
+#sidebar-hide #sidebar .container {
+  overflow-y: scroll;
+  width: 25%;
+  height: 100%;
+  background-color: white;
+}
+#sidebar-hide #sidebar .container div {
+  transition: background-color 0.3s ease-out;
+}
+#sidebar-hide #sidebar .container .container-header {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+#sidebar-hide #sidebar .container .container-header span {
+  cursor: pointer;
+}
+#sidebar-hide #sidebar .container .container-header span .icon {
+  width: 1.5rem;
+  height: 1rem;
+}
+#sidebar-hide #sidebar .container .container-header span .yutub {
+  margin-top: 0.4rem;
+  width: 8rem;
+  height: 3rem;
+}
+#sidebar-hide #sidebar .container .container-title {
+  display: flex;
+  flex-direction: column;
+}
+#sidebar-hide #sidebar .container .container-title div:hover {
+  background-color: #f0f0f0;
+}
+#sidebar-hide #sidebar .container .container-title div {
+  padding-top: 0.8rem;
+  padding-bottom: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-item: center;
+  font-size: 100%;
+  padding-left: 2rem;
+  padding-top: 0.5rem;
+  background-color: white;
+}
+#sidebar-hide #sidebar .container .container-title div img {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+#sidebar-hide #sidebar .container .container-title div .word {
+  margin-top: 0.2rem;
+  margin-left: 2rem;
+}
+#sidebar-hide #sidebar .container .container-content {
+  display: flex;
+  flex-direction: column;
+}
+#sidebar-hide #sidebar .container .container-content .container-content-header div {
+  width: 100%;
+  height: 100%;
+}
+#sidebar-hide #sidebar .container .container-content .container-content-header:hover {
+  background-color: #f0f0f0;
+}
+#sidebar-hide #sidebar .container .container-content .container-content-header:hover div {
+  background-color: #f0f0f0;
+}
+#sidebar-hide #sidebar .container .container-content div {
+  padding-top: 0.8rem;
+  padding-bottom: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-item: center;
+  font-size: 100%;
+  padding-left: 2rem;
+  padding-top: 0.5rem;
+  background-color: white;
+}
+#sidebar-hide #sidebar .container .container-content div img {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+#sidebar-hide #sidebar .container .container-content div .word {
+  margin-top: 0.2rem;
+  margin-left: 2rem;
+}
+#sidebar-hide #sidebar .container .container-premium {
+  display: flex;
+  flex-direction: column;
+}
+#sidebar-hide #sidebar .container .container-premium div:hover {
+  background-color: #f0f0f0;
+}
+#sidebar-hide #sidebar .container .container-premium div {
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-item: center;
+  font-size: 100%;
+  padding-left: 2rem;
+  padding-top: 0.5rem;
+  background-color: white;
+}
+#sidebar-hide #sidebar .container .container-premium div img {
+  width: 1.25rem;
+  height: 1.6rem;
+}
+#sidebar-hide #sidebar .container .container-premium div .word {
+  margin-top: 0.2rem;
+  margin-left: 2rem;
+}
+#sidebar-hide #sidebar .container .container-link {
+  margin-left: 1.5rem;
+  font-size: 90%;
+  font-weight: bold;
+}
+#sidebar-hide #sidebar .container .container-link a {
+  margin-left: 0.5rem;
+  text-decoration: none;
+}
+#sidebar-hide #sidebar .blank {
+  opacity: 50%;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+
+#setting {
+  display: none;
+  z-index: 2;
+  width: 25%;
+  left: 62.5%;
+  top: 3.6rem;
+  position: absolute;
+}
+#setting .setting-container {
+  font-family: arial, san-serif;
+  border-left: solid 0.5px;
+  border-right: solid 0.5px;
+  border-color: #c8c8c8;
+  background-color: white;
+}
+#setting .setting-container #setting-container-main {
+  display: block;
+  flex-direction: column;
+}
+#setting .setting-container #setting-container-main div:hover {
+  cursor: pointer;
+  background-color: #f0f0f0;
+}
+#setting .setting-container #setting-container-main hr {
+  width: 100%;
+}
+#setting .setting-container #setting-container-main div {
+  display: flex;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 3rem;
+  font-size: 100%;
+}
+#setting .setting-container #setting-container-main div span {
+  display: flex;
+  align-items: center;
+  padding-right: 2rem;
+}
+#setting .setting-container #setting-container-main div span img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+#setting .setting-container #setting-container-main div .setting-container-arrow {
+  padding-right: 0.6rem;
+  padding-left: 0.6rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  border-radius: 100px;
+  margin-left: 5rem;
+  background-color: #e6e6e6;
+}
+#setting .setting-container #setting-container-location {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+#setting .setting-container #setting-container-location .back {
+  padding-left: 1.8rem;
+}
+#setting .setting-container #setting-container-location div {
+  display: flex;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 3rem;
+}
+#setting .setting-container #setting-container-location div span {
+  display: flex;
+  align-items: center;
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+#setting .setting-container #setting-container-location div img {
+  margin-left: 0%;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+#setting .setting-container #setting-container-location div:hover {
+  background-color: #f0f0f0;
+}
+#setting .setting-container #setting-container-location hr {
+  width: 100%;
+}
+#setting .setting-container #setting-container-restricted {
+  display: none;
+}
+#setting .setting-container #setting-container-restricted .back {
+  padding-left: 1.8rem;
+}
+#setting .setting-container #setting-container-restricted div {
+  display: flex;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 3rem;
+}
+#setting .setting-container #setting-container-restricted div span {
+  display: flex;
+  align-items: center;
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+#setting .setting-container #setting-container-restricted div img {
+  margin-left: 0%;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+#setting .setting-container #setting-container-restricted hr {
+  width: 100%;
+}
+#setting .setting-container #setting-container-restricted div:hover {
+  background-color: #f0f0f0;
+}
+#setting .setting-container #setting-container-restricted #setting-container-restricted-slider {
+  margin-left: 2rem;
+}
+#setting .setting-container #setting-container-restricted #setting-container-restricted-slider input {
+  cursor: pointer;
+  transform: scale(1.5);
+}
+
+#shortcut {
+  width: 100%;
+  font-family: arial, san-serif;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 0;
+  display: none;
+}
+#shortcut #setting-shortcut {
+  margin: 3%;
+  background-color: white;
+}
+#shortcut #setting-shortcut #setting-shortcut-header {
+  padding-top: 0.4rem;
+  padding-left: 2rem;
+}
+#shortcut #setting-shortcut #setting-shortcut-content {
+  height: 27rem;
+  margin-left: 5%;
+  display: grid;
+  grid-gap: 5%;
+  grid-template-columns: 45% 45%;
+}
+#shortcut #setting-shortcut #setting-shortcut-content .shortcut-content-header {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+#shortcut #setting-shortcut #setting-shortcut-content .shortcut-content-header div:nth-child(1) {
+  font-weight: bold;
+}
+#shortcut #setting-shortcut #setting-shortcut-content .shortcut-content-content div {
+  padding: 0.25rem;
+  display: grid;
+  grid-template-columns: 70% 30%;
+}
+#shortcut #setting-shortcut #setting-shortcut-footer {
+  display: flex;
+  flex-direction: row-reverse;
+}
+#shortcut #setting-shortcut #setting-shortcut-footer span {
+  cursor: pointer;
+  margin-right: 2.5rem;
+  margin-bottom: 0.5rem;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+#shortcut #setting-shortcut #setting-shortcut-footer span h2 {
+  color: blue;
+}
+#shortcut #setting-shortcut #setting-shortcut-footer span:active {
+  background-color: #f0f0f0;
+  border-radius: 100px;
+}
+
+.icon-sign-in {
+  border: 1px solid blue;
+}
+
+.user-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+}
+
+.span-upload {
+  margin-right: 5%;
+}
+
+#user-sign-out {
+  position: absolute;
+  background-color: white;
+  display: none;
+  padding: 1% 1.5% 1% 1.5%;
+  right: 3%;
+  top: 120%;
+}
+
+#user-sign-out:hover {
+  background-color: #c8c8c8;
+  cursor: pointer;
+}
+
+#playlist-modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow: none;
+  z-index: 3;
+  left: 0;
+  top: 0;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+#playlist-modal .playlist-modal-content {
+  background-color: #fefefe;
+  margin: 12% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+}
+#playlist-modal .playlist-modal-content .playlist-form {
+  display: flex;
+  justify-content: flex-start;
+}
+#playlist-modal .playlist-modal-content .playlist-form .playlist-label div {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-right: 0.5rem;
+}
+#playlist-modal .playlist-modal-content .playlist-form .playlist-input div {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+#playlist-modal .playlist-modal-content .playlist-form .playlist-input div textarea {
+  resize: none;
+}
+#playlist-modal .playlist-button {
+  display: flex;
+  justify-content: flex-end;
+}
+#playlist-modal .playlist-button .playlist-button-create {
+  color: white;
+  background-color: #6e5eff;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  margin-right: 0.5rem;
+  border: none;
+  border-radius: 5px;
+}
+#playlist-modal .playlist-button .playlist-button-cancel {
+  color: #464646;
+  background-color: #e6e6e6;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  margin-right: 0.5rem;
+  border: none;
+  border-radius: 5px;
+}
+
+#search-suggestion {
+  padding: 0.5rem 0rem 0.5rem 0rem;
+  background-color: white;
+}
+#search-suggestion .suggestion {
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  transition: background-color 0.2s ease-out;
+}
+#search-suggestion .suggestion:hover {
+  cursor: pointer;
+  background-color: gainsboro;
+}

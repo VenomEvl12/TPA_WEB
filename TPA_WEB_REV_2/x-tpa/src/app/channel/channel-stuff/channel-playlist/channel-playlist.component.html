@@ -1,0 +1,16 @@
+<section>
+    <div id='playlist-header'>
+        <div id='word'>
+            Created Playlists
+        </div>
+        <div id='sort'>
+            <i class="fa fa-sort" aria-hidden="true"></i>
+             SORT BY
+        </div>
+    </div>
+    <div id='playlist'>
+        <div class="box"  *ngFor='let playlist of playlists' >
+            <app-channel-playlist-box [playlist]='playlist'></app-channel-playlist-box>
+        </div>
+    </div>
+</section>

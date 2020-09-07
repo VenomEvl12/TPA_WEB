@@ -1,0 +1,27 @@
+<div id='community-comment-part'>
+    <div id='part-image'>
+        <img src="{{comment.user.thumbnail}}" alt="">
+    </div>
+    <div id='part-comment'>
+        <div id='part-comment-header'>
+            <div id='title'>
+                {{comment.user.username}}
+            </div>
+            <div id='counter'>
+                {{comment.day}}/{{comment.month}}/{{comment.year}}
+            </div>
+        </div>
+        <div id='part-comment-comment'>{{comment.comDescription}}
+        </div>
+        <div style="margin-top: 0.5rem; font-size: 110%">
+            <i class="fa fa-thumbs-up" aria-hidden="true" (click)='updateLike()'></i> {{like}}
+            <i class="fa fa-thumbs-down" aria-hidden="true" (click)='updateDislike()'></i> {{dislike}}
+        </div>
+    </div>
+    <div id='part-setting' *ngIf="userID == localUserID">
+        <i class="fa fa-ellipsis-v" aria-hidden="true"(click)="hide()"></i>
+        <div id='delete-button' *ngIf='hideB' (click)="deleteCommunity()">
+            delete
+        </div>
+    </div>
+</div>

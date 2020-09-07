@@ -1,0 +1,21 @@
+type channelLink {
+    channelLinkID: ID!
+    userID: ID!
+    link: String!
+}
+
+input newChannelLink {
+    userID: ID!
+    link: String!
+}
+
+extend type Query {
+    retrieveLinks(userID: ID!): [channelLink!]!
+}
+
+extend type Mutation {
+    createChannelLink(input: newChannelLink!): channelLink!
+    updateChannelLink(channelLinkID: ID!, userID: ID!, link: String!): channelLink!
+    deleteChannelLink(channelLinkID: ID!, userID: ID!): Boolean!
+    deleteAllChannelLink(userID: ID!): Boolean!
+}

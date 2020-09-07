@@ -1,0 +1,17 @@
+<div id='container-video'>
+    <div id='container-video-video' (click)='changePlayer()'>
+        <img src="{{video.thumbnail}}" alt="">
+    </div>
+    <div id='container-video-attribute'>
+        <div>
+            {{video.title}}
+        </div>
+        <div>
+            {{video.user.username}}
+        </div>
+        <div>
+            <span>{{views}} Views • </span>
+            <span>{{video.day}}/{{video.month}}/{{video.year}}</span>
+        </div>
+    </div>
+</div>

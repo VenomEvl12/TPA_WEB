@@ -1,0 +1,473 @@
+header
+    position: sticky
+    z-index: 1
+    top: 0
+    margin: 0
+    padding: 0
+
+input
+    outline: none
+
+
+hr
+    height: 1px
+    border: 0
+    border-top: 1px solid rgb(223, 223, 223)
+
+#header-sticky
+    background-color: white
+    padding-bottom: 0.7em
+    top: 0
+    
+#logo
+    left: 0
+    height: 2.75em
+    width: 7.5em
+
+.icon
+    margin-top: 1.4em
+    margin-left: 1.2em
+    margin-right: 2em
+    margin-bottom: 0.8em
+    height: 1em
+    width: 1.5em
+
+.icon-user
+    margin-left: 1em
+    margin-right: 1em
+    height: 1.5em
+    width: 1.5em
+
+#sign-in-button
+    cursor: pointer
+    margin-left: 1rem
+    margin-top: 0.6em
+    width: 8em
+    height: 3em
+    background-color: white
+    border: solid 1px
+    border-color: blue
+    img
+        margin-top: 0.4em
+        width: 6em
+        height: 2em
+
+#nav-bar
+    position: sticky
+    top: 0px
+    display: flex
+    z-index: 0
+    justify-content: space-between
+    height: 3em
+    background-color: white
+    span:hover
+        cursor: pointer
+    #search
+        margin-top: 0.4em
+    #kiri
+        margin-left: 1em
+    #kanan
+        margin-top: 1%
+        display: flex
+        align-items: center
+        margin-right: 2em
+        span:active:nth-child(-n+3)
+            padding-top: 1rem
+            padding-bottom: 0.5rem
+            border-radius: 1rem
+            background-color: rgb(240, 240, 240)
+
+#search-box
+    margin-top: 0.6em
+    margin-right: 0
+    input
+        box-shadow: inset 0 0 3px #c7c7c7
+        margin-top: 0.3em
+        height: 1.7em
+        width: 35em
+        border: 1px solid
+        font-size: 110%
+        border-color: rgb(202, 202, 202)
+    button
+        border-top-right-radius: 5%
+        border-bottom-right-radius: 5%
+        background-color: rgb(245, 245, 245)
+        padding-bottom: 0em
+        margin-left: -1em
+        height: 2.6em
+        width: 5em
+        border: 1px solid
+        border-color: rgb(202, 202, 202)
+        img
+            margin: 0
+            padding: 0
+            height: 0.75em
+            width: 1em
+
+#sidebar-hide
+    display: none
+    a
+        text-decoration: none
+        color: black
+    #sidebar
+        z-index: 2
+        font-family: arial, san-serif
+        position: fixed
+        width: 100%
+        height: 100%
+        display: flex
+        justify-content: left
+        .container
+            div
+                transition: background-color 0.3s ease-out
+            overflow-y: scroll
+            width: 25%
+            height: 100%
+            background-color: white
+            .container-header
+                display: flex
+                justify-content: left
+                align-items: center
+                span
+                    cursor: pointer
+                    .icon
+                        width: 1.5rem
+                        height: 1rem
+                    .yutub
+                        margin-top: 0.4rem
+                        width: 8rem
+                        height: 3rem
+            .container-title
+                div:hover
+                    background-color: rgb(240, 240, 240)
+                display: flex
+                flex-direction: column
+                div
+                    padding-top: 0.8rem
+                    padding-bottom: 0.5rem
+                    cursor: pointer
+                    img
+                        width: 1.25rem
+                        height: 1.25rem
+                    display: flex
+                    align-item: center
+                    font-size: 100%
+                    padding-left: 2rem
+                    padding-top: 0.5rem
+                    background-color: white
+                    .word
+                        margin-top: 0.2rem
+                        margin-left: 2rem
+            .container-content
+                .container-content-header
+                    div
+                        width: 100%
+                        height: 100%
+                .container-content-header:hover
+                    div
+                        background-color: rgb(240, 240, 240)
+                    background-color: rgb(240, 240, 240)
+                display: flex
+                flex-direction: column
+                div
+                    padding-top: 0.8rem
+                    padding-bottom: 0.5rem
+                    cursor: pointer
+                    img
+                        width: 1.25rem
+                        height: 1.25rem
+                    display: flex
+                    align-item: center
+                    font-size: 100%
+                    padding-left: 2rem
+                    padding-top: 0.5rem
+                    background-color: white
+                    .word
+                        margin-top: 0.2rem
+                        margin-left: 2rem
+            .container-premium
+                div:hover
+                    background-color: rgb(240, 240, 240)
+                display: flex
+                flex-direction: column
+                div
+                    padding-top: 1rem
+                    padding-bottom: 0.5rem
+                    cursor: pointer
+                    img
+                        width: 1.25rem
+                        height: 1.6rem
+                    display: flex
+                    align-item: center
+                    font-size: 100%
+                    padding-left: 2rem
+                    padding-top: 0.5rem
+                    background-color: white
+                    .word
+                        margin-top: 0.2rem
+                        margin-left: 2rem
+            .container-link
+                margin-left: 1.5rem
+                font-size: 90%
+                font-weight: bold
+                a
+                    margin-left: 0.5rem
+                    text-decoration: none
+        .blank
+            opacity: 50%
+            width: 100%
+            height: 100%
+            background-color: black
+
+#setting
+    display: none
+    z-index: 2
+    width: 25%
+    left: 62.5%
+    top: 3.6rem
+    position: absolute
+    .setting-container
+        font-family: arial, san-serif
+        border-left: solid 0.5px
+        border-right: solid 0.5px
+        border-color: rgb(200, 200, 200)
+        background-color: white
+        #setting-container-main
+            display: block
+            flex-direction: column
+            div:hover
+                cursor: pointer
+                background-color: rgb(240, 240, 240)
+            hr
+                width: 100%
+            div
+                display: flex
+                padding-top: 1rem
+                padding-bottom: 1rem
+                padding-left: 3rem
+                span
+                    display: flex
+                    align-items: center
+                    padding-right: 2rem
+                    img
+                        width: 1.5rem
+                        height: 1.5rem
+                .setting-container-arrow
+                    padding-right: 0.6rem
+                    padding-left: 0.6rem
+                    padding-top: 0.3rem
+                    padding-bottom: 0.3rem
+                    border-radius: 100px
+                    margin-left: 5rem
+                    background-color: rgb(230, 230, 230)
+                font-size: 100%        
+        #setting-container-location
+            display: none
+            flex-direction: column
+            cursor: pointer
+            .back
+                padding-left: 1.8rem
+            div
+                display: flex
+                padding-top: 1rem
+                padding-bottom: 1rem
+                padding-left: 3rem
+                span
+                    display: flex
+                    align-items: center
+                    padding-right: 2rem
+                    padding-left: 2rem
+                img
+                    margin-left: 0%
+                    width: 1.5rem
+                    height: 1.5rem
+            div:hover
+                background-color: rgb(240, 240, 240)
+            hr
+                width: 100%
+        #setting-container-restricted
+            display: none
+            .back
+                padding-left: 1.8rem
+            div
+                display: flex
+                padding-top: 1rem
+                padding-bottom: 1rem
+                padding-left: 3rem
+                span
+                    display: flex
+                    align-items: center
+                    padding-right: 2rem
+                    padding-left: 2rem
+                img
+                    margin-left: 0%
+                    width: 1.5rem
+                    height: 1.5rem
+            hr
+                width: 100%
+            div:hover
+                background-color: rgb(240, 240, 240)
+            #setting-container-restricted-slider
+                margin-left: 2rem
+                input
+                    cursor: pointer
+                    transform: scale(1.5)
+#shortcut
+    width: 100%
+    font-family: arial, san-serif
+    background-color: rgb(0, 0, 0, 0.6)
+    position: absolute
+    top: 0
+    display: none
+    #setting-shortcut
+        margin: 3%
+        background-color: white
+        #setting-shortcut-header
+            padding-top: 0.4rem
+            padding-left: 2rem
+        #setting-shortcut-content
+            height: 27rem
+            margin-left: 5%
+            display: grid
+            grid-gap: 5%
+            grid-template-columns: 45% 45%
+            .shortcut-content-header
+                padding-top: 0.5rem
+                padding-bottom: 0.5rem
+                div:nth-child(1)
+                    font-weight: bold
+            .shortcut-content-content
+                div
+                    padding: 0.25rem
+                    display: grid
+                    grid-template-columns: 70% 30%
+        #setting-shortcut-footer
+            display: flex
+            flex-direction: row-reverse
+            span
+                cursor: pointer
+                h2
+                    color: blue
+                margin-right: 2.5rem
+                margin-bottom: 0.5rem
+                padding-right: 0.5rem
+                padding-left: 0.5rem
+            span:active
+                background-color: rgb(240, 240, 240)
+                border-radius: 100px
+
+
+.icon-sign-in
+    border: 1px solid blue
+
+.user-icon
+    width: 30px
+    height: 30px
+    border-radius: 100%
+
+.span-upload
+    margin-right: 5%
+
+#user-sign-out
+    position: absolute
+    background-color: white
+    padding: 1% 1.5% 1% 1.5%
+    right: 3%
+    top: 120%
+    .component
+        transition: background-color 0.2s ease-out
+    .component:hover
+        cursor: pointer
+        background-color: rgb(220, 220, 220)
+
+.user-choice
+    cursor: pointer
+    background-color: rgb(220, 220, 220)
+    
+#playlist-modal
+    position: fixed
+    width: 100%
+    height: 100%
+    overflow: none
+    z-index: 3
+    left: 0
+    top: 0
+    background-color: rgb(0,0,0)
+    background-color: rgba(0,0,0,0.4)
+    .playlist-modal-content
+        background-color: #fefefe
+        margin: 12% auto
+        padding: 20px
+        border: 1px solid #888
+        width: 50%
+        .playlist-form
+            display: flex
+            justify-content: flex-start
+            .playlist-label
+                div
+                    padding-top: 0.5rem
+                    padding-bottom: 0.5rem
+                    padding-right: 0.5rem
+            .playlist-input
+                div
+                    padding-top: 0.5rem
+                    padding-bottom: 0.5rem
+                    textarea
+                        resize: none
+    .playlist-button
+        display: flex
+        justify-content: flex-end
+        .playlist-button-create
+            color: white
+            background-color: rgb(110, 94, 255)
+            padding: 0.5rem 1rem 0.5rem 1rem
+            margin-right: 0.5rem
+            border: none
+            border-radius: 5px
+        .playlist-button-cancel
+            color: rgb(70, 70, 70)
+            background-color: rgb(230, 230, 230)
+            padding: 0.5rem 1rem 0.5rem 1rem
+            margin-right: 0.5rem
+            border: none
+            border-radius: 5px
+
+
+#search-suggestion
+    padding: 0.5rem 0rem 0.5rem 0rem
+    background-color: white
+    .suggestion
+        padding: 0.5rem 1rem 0.5rem 1rem
+        transition: background-color 0.2s ease-out
+    .suggestion:hover
+        cursor: pointer
+        background-color: rgb(220, 220, 220)
+
+.container-subscribe
+    .subscribe
+        display: flex
+        justify-content: flex-start
+        align-content: center
+        align-items: center
+        transition: background-color 0.2s ease-out
+        padding: 0.5rem 0rem 0.5rem 0rem
+        img
+            margin-left: 2rem
+            width: 30px
+            border-radius: 100px
+        .username
+            padding-left: 1rem
+            padding-top: -1rem
+    .subscribe:hover
+        cursor: pointer
+        background-color: rgb(220, 220, 220)
+
+.show-more
+    padding-top: 1rem
+    padding-bottom: 1rem
+    padding-left: 5rem
+    transition: background-color 0.2s ease-out
+
+.show-more:hover
+    cursor: pointer
+    background-color: rgb(220, 220, 220)

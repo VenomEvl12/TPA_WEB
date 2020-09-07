@@ -1,0 +1,58 @@
+section {
+  font-family: arial, san-serif;
+}
+
+#not-user {
+  padding: 9.5rem 1rem 6rem 1rem;
+}
+#not-user #not-user-image {
+  display: flex;
+  justify-content: center;
+}
+#not-user #not-user-message {
+  display: flex;
+  flex-direction: column;
+  align-text: center;
+  padding: 3rem 0rem 3rem 0;
+}
+#not-user #not-user-message div {
+  padding: 0 0rem 2rem 0;
+  text-align: center;
+}
+#not-user #not-user-message div button {
+  background-color: white;
+  border: 1px solid blue;
+  border-radius: 2px;
+}
+#not-user #not-user-message div:first-child {
+  font-size: 175%;
+}
+
+#content {
+  padding: 2rem 0.5rem 2rem 0.5rem;
+}
+#content #content-list {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+#content #content-list div {
+  padding: 0.2rem;
+}
+#content #content-list div video {
+  width: 210px;
+}
+#content #content-list div #content-detail div {
+  font-size: 80%;
+  color: #787878;
+}
+#content #content-list div #content-detail div:first-child {
+  color: black;
+  padding-bottom: 0.5rem;
+  font-size: 100%;
+  font-weight: bold;
+}
+#content #content-header {
+  padding: 1rem 1rem 1rem 0;
+  font-size: 150%;
+}

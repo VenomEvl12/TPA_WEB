@@ -1,0 +1,53 @@
+#search-channel {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+#search-channel .channel-content {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#search-channel .channel-content .search-channel-image {
+  margin-right: 7rem;
+  margin-left: 7rem;
+}
+#search-channel .channel-content .search-channel-image img {
+  border-radius: 100px;
+  width: 135px;
+}
+#search-channel .channel-content .search-channel-desc .channel-username {
+  padding-bottom: 1rem;
+  font-size: 1.4rem;
+  font-weight: 525;
+}
+#search-channel .channel-content .search-channel-desc .channel-sub {
+  font-size: 0.9rem;
+  color: #787878;
+  padding-bottom: 0.5rem;
+}
+#search-channel .channel-content .search-channel-desc .channel-desc {
+  font-size: 0.9rem;
+  color: #787878;
+}
+#search-channel .search-channel-subs {
+  display: flex;
+  align-items: center;
+  padding-right: 1rem;
+}
+#search-channel .search-channel-subs button {
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 5px;
+  color: white;
+  background-color: red;
+  border: none;
+  padding: 0.6rem 1rem 0.6rem 1rem;
+}
+
+hr {
+  border: none;
+  border-bottom: 1px solid #d6d6d6;
+}

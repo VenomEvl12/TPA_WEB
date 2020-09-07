@@ -1,0 +1,30 @@
+#container-video {
+  display: grid;
+  grid-template-columns: 45% 25%;
+  grid-column-gap: 2rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+#container-video #container-video-video {
+  padding: 0 0.5rem 0 0.5rem;
+}
+#container-video #container-video-video img {
+  width: 9rem;
+}
+#container-video #container-video-attribute {
+  width: 20rem;
+  display: flex;
+  flex-direction: column;
+}
+#container-video #container-video-attribute div {
+  padding: 0 0 0.5rem 0;
+}
+#container-video #container-video-attribute div:nth-child(1) {
+  font-weight: bold;
+}
+#container-video #container-video-attribute div:nth-child(2) {
+  color: #8c8c8c;
+}
+#container-video #container-video-attribute div:nth-child(3) {
+  color: #8c8c8c;
+}

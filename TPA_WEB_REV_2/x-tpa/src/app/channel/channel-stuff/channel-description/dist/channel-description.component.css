@@ -1,0 +1,118 @@
+section {
+  top: 200px;
+  font-family: arial, san-serif;
+  padding-right: 13%;
+  padding-left: 5%;
+  padding-top: 3%;
+  display: flex;
+  justify-content: space-around;
+}
+#description {
+  width: 400%;
+  padding-right: 6%;
+}
+#description div {
+  padding-top: 3%;
+  padding-bottom: 5%;
+}
+#description #details-description {
+  color: #a0a0a0;
+}
+
+.description-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 130%;
+}
+
+#counter {
+  width: 200%;
+}
+#counter hr {
+  margin-bottom: 10%;
+}
+#counter div {
+  padidng-top: 5%;
+  padding-bottom: 5%;
+}
+#counter #flag {
+  padding-top: 5%;
+  font-size: 120%;
+  color: #a0a0a0;
+}
+#counter #flag span {
+  padding: 5%;
+  border-radius: 100px;
+}
+#counter #flag span:active {
+  background-color: gainsboro;
+}
+
+#featured {
+  width: 200%;
+}
+#featured #featured-header {
+  font-size: 120%;
+  font-weight: bold;
+  color: #8c8c8c;
+}
+#featured #featured-content {
+  padding-top: 10%;
+}
+#featured #featured-content #featured-content-user {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+#featured #featured-content #featured-content-user img {
+  width: 30px;
+  height: 30px;
+  background-color: #787878;
+  border-radius: 100%;
+  padding: 20%;
+}
+#featured #featured-content #featured-content-name {
+  padding-left: 15%;
+  font-weight: bold;
+}
+#featured #featured-content button {
+  color: #535353;
+  padding: 5%;
+  font-weight: bold;
+  padding-right: 50%;
+  background-color: #e6e6e6;
+  border: 0;
+  border-radius: 5px;
+}
+
+span {
+  padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+  border-radius: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s ease-out;
+}
+
+span:hover {
+  background-color: gainsboro;
+}
+
+span:active {
+  background-color: #a0a0a0;
+}
+
+button {
+  padding: 1rem;
+  border: none;
+  background-color: #c80000;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.1s ease-in;
+  outline: none;
+}
+
+button:active {
+  background-color: red;
+}

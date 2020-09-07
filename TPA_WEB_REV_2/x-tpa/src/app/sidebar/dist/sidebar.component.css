@@ -1,0 +1,38 @@
+#sidebar-list {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  overflow-y: auto;
+  flex-direction: column;
+}
+#sidebar-list span {
+  transition: background-color 0.3s ease-out;
+}
+#sidebar-list .span-icon {
+  padding: 1em 1.2em 1em 1.2em;
+}
+#sidebar-list .span-icon i {
+  color: #777777;
+  font-size: 1.3em;
+  margin-left: 0.5em;
+}
+#sidebar-list .span-icon p {
+  font-size: 70%;
+  color: #777777;
+  width: 5.8em;
+  margin-left: -0.5em;
+}
+#sidebar-list .span-icon img {
+  height: 2.75em;
+  width: 2.75em;
+}
+#sidebar-list .span-subscription {
+  padding: 1em 0.8em 1em 0.5em;
+}
+#sidebar-list .span-subscription img {
+  height: 2.5em;
+  width: 4.25em;
+}
+#sidebar-list span:hover {
+  background-color: gainsboro;
+  cursor: pointer;
+}

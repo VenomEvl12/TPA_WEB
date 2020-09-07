@@ -1,0 +1,63 @@
+.video-list {
+  margin-top: 2em;
+  margin-bottom: 1em;
+  display: grid;
+  grid-template-columns: 15% 40%;
+  grid-column-gap: 17%;
+}
+.video-list img {
+  cursor: pointer;
+  width: 22rem;
+}
+.video-list .header {
+  cursor: pointer;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.video-list .header h2 {
+  margin-top: 0;
+  padding-top: 0;
+  margin-bottom: 0.2em;
+}
+.video-list .middle {
+  margin-bottom: 1em;
+  color: #505050;
+  font-size: 95%;
+}
+.video-list .bottom {
+  color: #505050;
+  font-size: 95%;
+  margin-top: 1em;
+}
+
+#desc {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+#desc i {
+  font-size: 150%;
+}
+
+#dot {
+  margin-top: 5%;
+  cursor: pointer;
+  margin-right: 5%;
+  position: relative;
+}
+
+#option {
+  position: absolute;
+  background-color: white;
+  padding: 2%;
+  top: 1.5rem;
+  width: 10rem;
+}
+#option .option-select {
+  padding-top: 5%;
+  padding-left: 10%;
+  padding-bottom: 5%;
+}
+#option .option-select:hover {
+  background-color: #d2d2d2;
+}

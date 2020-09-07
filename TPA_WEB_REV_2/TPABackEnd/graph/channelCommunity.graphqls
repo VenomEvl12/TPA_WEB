@@ -1,0 +1,32 @@
+type ChannelCommunity {
+    communityID: ID!
+    channelID: ID!
+    user: User!
+    comDescription: String!
+    like: Int!
+    dislike: Int!
+    day: Int!
+    month: Int!
+    year: Int!
+}
+
+input newChannelCommunity {
+    channelID: ID!
+    userID: ID!
+    day: Int!
+    month: Int!
+    year: Int!
+    comDescription: String!
+}
+
+extend type Query {
+    channelCommunities(channelID: ID!): [ChannelCommunity!]!
+    channelCommunity(communityID: ID!): ChannelCommunity!
+}
+
+extend type Mutation {
+    createChannelCommunities(input: newChannelCommunity!): ChannelCommunity!
+    updateChannelCommunitiesLike(communityID: ID!, like: Boolean!): ChannelCommunity!
+    updateChannelCommunitiesDislike(communityID: ID!, dislike: Boolean!): ChannelCommunity!
+    deleteChannelCommunities(communityID: ID!): Boolean!
+}

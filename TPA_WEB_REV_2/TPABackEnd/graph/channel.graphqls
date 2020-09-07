@@ -1,0 +1,31 @@
+type Channel {
+    channelID: ID!
+    userID: ID!
+    viewCount: Int!
+    location: String!
+    channelDescription: String!
+    channelImage: String!
+    channelBanner: String!
+    videos: [Video!]!
+}
+
+input newChannel {
+    userID: ID!
+    location: String!
+    channelImage: String!
+}
+
+extend type Query {
+    getChannel(userID: ID!): Channel!
+    getChannelId(channelID: ID!): Channel!
+}
+
+extend type Mutation{
+    createChannel(input: newChannel): Channel!
+    updateChannelView(channelID: ID!, viewCount: Int!): Channel!
+    updateChannelLocation(channelID: ID!, location: String!): Channel!
+    updateChannelDescription(channelID: ID!, description: String!): Channel!
+    updateChannelImage(channelID: ID!, channelImage: String!): Channel!
+    updateChannelBanner(channelID: ID!, channelBanner: String!): Channel!
+    deleteChannel(channelID: ID!): Boolean
+}

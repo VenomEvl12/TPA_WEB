@@ -1,0 +1,122 @@
+section {
+  margin-top: 4%;
+  margin-left: 4%;
+}
+
+#row-video {
+  position: relative;
+  font-family: arial, san-serif;
+  margin-top: 2%;
+  margin-right: 2%;
+  display: inline-block;
+}
+#row-video span img {
+  height: 9em;
+  margin-bottom: -1em;
+}
+#row-video span h1 {
+  margin-top: 0.5rem;
+  margin-bottom: 1.7rem;
+  width: 10rem;
+  font-size: 100%;
+}
+#row-video span p {
+  font-size: 90%;
+  margin-top: -0.9rem;
+  color: #6e6e6e;
+}
+
+a {
+  cursor: pointer;
+  color: black;
+  text-decoration: none;
+}
+
+#x {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5%;
+}
+#x #image {
+  margin-top: 4%;
+  margin-right: -4%;
+}
+#x #image img {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+}
+#x #dot {
+  margin-top: 5%;
+  cursor: pointer;
+  margin-right: 5%;
+  position: relative;
+}
+
+#option {
+  position: absolute;
+  background-color: white;
+  z-index: 1;
+  padding: 2%;
+  top: 1.1rem;
+  width: 10rem;
+}
+#option .option-select {
+  padding-top: 5%;
+  padding-left: 10%;
+  padding-bottom: 5%;
+}
+#option .option-select:hover {
+  background-color: #d2d2d2;
+}
+
+#thumbnailx {
+  cursor: pointer;
+}
+
+#image {
+  cursor: pointer;
+}
+
+#playlist-modal {
+  position: absolute;
+  width: 16.075rem;
+  height: 14rem;
+  overflow: none;
+  z-index: 3;
+  left: 0;
+  top: 0;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+#playlist-modal .playlist-modal-content {
+  background-color: #fefefe;
+  margin: 12% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+}
+#playlist-modal .playlist-modal-content .playlist-modal-list {
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  transition: background-color 0.3s ease-in;
+}
+#playlist-modal .playlist-modal-content .playlist-modal-list:hover {
+  background-color: #e6e6e6;
+  cursor: pointer;
+}
+#playlist-modal .playlist-modal-button {
+  text-align: center;
+}
+#playlist-modal .playlist-modal-button button {
+  padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+  border: none;
+  color: #505050;
+  background-color: gainsboro;
+  border-radius: 5px;
+  font-weight: bold;
+  outline: none;
+}
+#playlist-modal .playlist-modal-button button:active {
+  background-color: #fafafa;
+}

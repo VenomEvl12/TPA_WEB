@@ -1,0 +1,50 @@
+#community-comment-part
+        display: flex
+        justify-content: flex-start
+        border: 1px solid
+        border-color: rgb(220, 220, 220)
+        padding: 5%
+        margin-bottom: 5%
+        #part-image
+            img
+                border-radius: 100%
+                width: 60px
+                height: 60px
+        #part-comment
+            width: 100%
+            margin-left: 5%
+            padding-right: 4%
+            #part-comment-header
+                display: flex
+                justify-content: flex-start
+                padding-bottom: 1.5%
+                #title
+                    font-weight: bold
+                    font-size: 110%
+                #counter
+                    padding-left: 3%
+                    font-size: 90%
+                    color: rgb(100, 100, 100)
+        #part-setting
+            position: relative
+            i
+                transition: background-color 0.5s ease-out
+                padding: 200% 400% 200% 400%
+                border-radius: 100%
+            i:active
+                background-color: rgb(140, 140,140)
+
+        
+#delete-button
+    padding: 0.4rem 1.2rem 0.4rem 1.2rem
+    position: absolute
+    left: 0.8rem
+    cursor: pointer
+    transition: background-color 1s ease-out
+    background-color: white
+
+#delete-button:hover
+    background-color: rgb(180, 180, 180)
+
+i:hover
+    cursor: pointer

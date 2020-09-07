@@ -1,0 +1,63 @@
+<section>
+    <div id="playlist-modal" *ngIf='showPlaylistModal'>
+        <div class='playlist-inside'>
+           <div class='playlist-inside-header'>
+               Playlist
+           </div>
+           <hr>
+           <div class='content'>
+               <div class='item' *ngFor="let playlist of userPlaylists" (click)="inputToPlaylist(playlist.playlistID)">
+                   {{playlist.playlistHeader}}
+               </div>
+           </div>
+           <hr>
+           <div class="button">
+               <button class="cancel" (click)="showPlaylistModalFunc()">CANCEL</button>
+           </div>
+        </div>
+   </div>
+    <div id='sort'>
+        <i class="fa fa-sort" aria-hidden="true" (click)='showSort()'></i>FILTER
+        <div class="sort-modal" *ngIf='sortModal'>
+            <div class="item" (click)='sortByDate(1)'>
+                This week
+                <hr>
+            </div>
+            <div class="item" (click)='sortByDate(2)'>
+                This Month
+                <hr>
+            </div>
+            <div class="item" (click)='sortByDate(3)'>
+                This Year
+                <hr>
+            </div>
+            <div class="item" (click)='showPlaylistFunc()'>
+                Playlist Only
+                <hr>
+            </div>
+            <div class="item" (click)='showChannelFunc()'>
+                Channel Only
+                <hr>
+            </div>
+            <div class="item" (click)='showVideoFunc()'>
+                Video Only
+                <hr>
+            </div>
+            <div class="item" (click)='showAll()'>
+                Show All
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div id='channel' *ngIf='showChannel'>
+        <app-search-channel-box *ngFor='let user of users' [user]='user'></app-search-channel-box>
+    </div>
+    <hr>
+    <div id="playlist" *ngIf='showPlaylist'>
+        <app-search-playlist-box  *ngFor='let playlist of playlists' [playlist]='playlist'></app-search-playlist-box>
+    </div>
+    <hr>
+    <div id="video" *ngIf='showVideo'>
+        <app-video-genre *ngFor='let video of videosShow' [video]='video' (showModal)='showModalFunc($event)' (videoID)="insertVideoIdFunc($event)"></app-video-genre>
+    </div>
+</section>

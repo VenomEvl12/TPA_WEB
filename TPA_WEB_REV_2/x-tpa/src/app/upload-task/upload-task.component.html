@@ -1,0 +1,59 @@
+<div id='upload-detail'>
+  <div>
+    <h1>Details</h1>
+  </div>
+  <div id='upload-detail-title'>
+    <div class='upload-detail-header'>
+      title ( required )
+    </div>
+    <div>
+      <input name="title" id="title" type="text" placeholder="title here">
+    </div>
+  </div>
+  <div id='upload-detail-description'>
+    <div class='upload-detail-header'>
+      description
+    </div>
+    <div>
+      <textarea name="description" id="description" cols="46" rows="10" placeholder="description"></textarea>
+    </div>
+  </div>
+  <div id="upload-detail-category">
+    <div>
+      Country :
+      <select name="country" id="location">
+        <option value="Indonesia">Indonesia</option>
+        <option value="Jepang">Jepang</option>
+        <option value="USA">USA</option>
+      </select> 
+      Category :
+      <select name="category" id="category">
+        <option value="Gaming">Gaming</option>
+        <option value="Music">Music</option>
+        <option value="News">News</option>
+        <option value="Movie">Movie</option>
+        <option value="Sport">Sport</option>
+        <option value="Commedy">Commedy</option>
+      </select>
+       Premium : <input type="checkbox" name="premium" id="premium">
+       Restriction : <input type="checkbox" name="restriction" id="restriction"><br><br>
+       <input type="file" name="thumbnail" id="thumbnail" (change)="uploadImage($event.target.files)">
+    </div>
+    <div id="upload-button">
+      <button (click)="inputValidation()">Upload</button>
+    </div>
+  </div>
+</div>
+<div *ngIf="percentage | async as pct">
+    <progress [value]="pct" max="100"></progress>
+    {{ pct | number }}%
+  </div>
+  <div *ngIf="snapshot | async as snap">
+  
+    {{ snap.bytesTransferred }} of {{ snap.totalBytes }} 
+  
+    <div *ngIf="downloadURL as url">
+      link : 
+      <a [href]="url" target="_blank" rel="noopener">{{downloadURL}}</a>
+    </div> 
+  </div>

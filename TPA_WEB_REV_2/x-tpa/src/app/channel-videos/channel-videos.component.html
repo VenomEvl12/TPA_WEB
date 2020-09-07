@@ -1,0 +1,60 @@
+<section>
+    <div class='update-modal'  *ngIf='updateModal'>
+        <div class="modal">
+            <div class="header">
+                UPDATE VIDEOS
+            </div>
+            <hr>
+            <div class="content">
+                <div class="label">
+                    <div class="item">title :</div>
+                    <div class="item">privacy :</div>
+                    <div class="item">thumbnail :</div>
+                    <div class="item">desc :</div>
+                </div>
+                <div class="input">
+                    <div class="item-i"><input id='title' type="text" placeholder="title"></div>
+                    <div class="item-i">
+                        <select name="" id="privacy">
+                            <option value="Public">Public</option>
+                            <option value="Private">Private</option>
+                        </select>
+                    </div>
+                    <div class="item-i">
+                        <input type="file" name="" id="thumbnail" (change)="uploadImage($event.target.files)">
+                    </div>
+                    <div class="item-i">
+                        <textarea name="" id="desc" cols="50" rows="10" style="resize: none;"></textarea>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="footer">
+                <button class='submit' (click)='showUpdateVideo()'>SUBMIT</button>
+                <button class='cancel' (click)="updateModalF()">CANCEL</button>
+            </div>
+        </div>
+    </div>
+    <div id='header'>
+        <div id='sort' (click)='showModalFunc()'>
+            <i class="fa fa-sort" aria-hidden="true"></i> SORT
+            <div id='modal' *ngIf='showModal'>
+                <div class="option" (click)='sortByViews()'>
+                    SORT BY VIEW
+                </div>
+                <div class="option" (click)='sortByNewest()'>
+                    SORT BY NEWEST
+                </div>
+                <div class="option" (click)='sortByOldest()'>
+                    SORT BY OLDEST
+                </div>
+            </div>
+        </div>
+    </div>
+    <span class='cards'>
+        <span *ngFor="let video of videos, let i = index">
+            <app-channel-video-box (ShowModal)="updateModalFunc($event)" (VideoID)="videoIDUpdate($event)" *ngIf='i < lastKey' [video] ="video"></app-channel-video-box>
+        </span>
+    </span>
+    <div class='footersss'></div>
+</section>

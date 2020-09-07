@@ -1,0 +1,40 @@
+<section>
+    <div id='not-user' *ngIf="showSubs == false">
+        <div id='not-user-image'>
+            <img src="../../assets/subscriptions.png" alt="">
+        </div>
+        <div id='not-user-message'>
+            <div>
+                Don’t miss new videos
+            </div>
+            <div>
+                Sign in to see updates from your favorite YouTube channels
+            </div>
+        </div>
+    </div>
+    <div *ngIf='showSubs == true'>
+        <div id='content'>
+            <div id='content-header'>
+                Today
+            </div>
+            <hr>
+            <div>
+                <app-video-box *ngFor="let video of videosToday" [video]="video"></app-video-box>
+            </div>
+            <div id='content-header'>
+                This Week
+            </div>
+            <hr>
+            <div>
+                <app-video-box *ngFor="let video of videosWeek" [video]="video"></app-video-box>
+            </div>
+            <div id='content-header'>
+                This Month
+            </div>
+            <hr>
+            <div>
+                <app-video-box *ngFor="let video of videosYear" [video]="video"></app-video-box>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,23 @@
+type ChannelCommunityVali{
+    CommunityValiID : ID!
+    userID : ID!
+    CommunityID : ID!
+    like: Boolean!
+    dislike: Boolean!
+}
+
+input newchannelCommunityVali {
+    userID : ID!
+    CommunityID : ID!
+}
+
+extend type Query {
+    channelCommunityVali(communityValiID: ID!, communityID: ID!, userID: ID!): ChannelCommunityVali!
+}
+
+extend type Mutation {
+    createChannelCommunityVali(input: newchannelCommunityVali): ChannelCommunityVali!
+    updateChannelCommunityValiLike(communityValiID: ID!): ChannelCommunityVali!
+    updateChannelCommunityValiDislike(communityValiID: ID!): ChannelCommunityVali!
+    deleteChannelCommunityVali(communityID: ID!): Boolean
+}

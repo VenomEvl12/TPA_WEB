@@ -1,0 +1,24 @@
+type userSubscribe {
+    userID: ID!
+    channelID: ID!
+    subscribe: Boolean!
+    channelUserID: ID!
+}
+
+input newUserSubscribe {
+    userID: ID!
+    channelID: ID!
+    channelUserID: ID!
+}
+
+extend type Query {
+    userSubscribes(userID: ID!): [userSubscribe!]!
+    channelSubscribe(channelID: ID!): userSubscribe
+    getChannelSubscribe(userID: ID!): [userSubscribe!]!
+}
+
+extend type Mutation {
+    createUserSubscribe(input: newUserSubscribe): userSubscribe!
+    updateUserSubscribe(userID: ID!, channelID: ID!): userSubscribe!
+    deleteUserSubscribe(userID: ID!, channelID: ID!): Boolean
+}

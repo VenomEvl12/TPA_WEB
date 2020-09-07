@@ -1,0 +1,23 @@
+section {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+hr {
+  border: none;
+  border-bottom: 1px solid #d6d6d6;
+}
+
+#sort {
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+#sort i {
+  padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+  border-radius: 100px;
+  margin-right: 0.5rem;
+  transition: background-color 0.3s ease-out;
+}
+#sort i:hover {
+  background-color: #c8c8c8;
+}

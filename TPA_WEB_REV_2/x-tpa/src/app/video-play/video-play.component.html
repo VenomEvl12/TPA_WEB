@@ -1,0 +1,177 @@
+<section>
+    <div id='video-container'>
+        <div id='video'>
+            <video src="{{video.sourceLink}}" controls id='video-play' (click)='hotkeys()'></video>
+        </div>
+        <div id='video-container-header'>
+            <div id='video-container-header-title'>{{video.title}}</div>
+            <span id='next-video' (click)='changePlayer()'>
+               next Video >
+            </span>
+        </div>
+        <div id='video-container-header-info'>
+            <div id='video-container-view'>
+                <div>
+                    <span>{{views}} view</span>
+                    <span> • </span>
+                    <span>{{date}}</span>
+                </div>
+            </div>
+            <div id='video-container-attribute'>
+                <div>
+                    <span (click)='likeVideoVal()' class="icon"><i class="fa fa-thumbs-up" aria-hidden="true"></i> </span>
+                    <span>{{like}}</span>
+                </div>
+                <div>
+                    <span class="icon" (click)='dislikeVideoVal()'><i class="fa fa-thumbs-down" aria-hidden="true"></i></span>
+                    <span>{{dislike}}</span>
+                </div>
+                <div class="share" (click)='shareModalFunc()'>
+                    <span><i class="fa fa-share" aria-hidden="true"></i> </span>
+                    <span>SHARE</span>
+                </div>
+                <div id='options'>
+                    <span (click)='showOptionFunc()'><i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                    </span>
+                    <div class="modal" *ngIf='showOption && user != null'>
+                        <div class="modal-attribute" (click)='showPlaylistModalFunc()'>
+                            add to playlist
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div id='video-container-user'>
+            <div id='container-user'>
+                <div>
+                    <span class='picture'><img src="{{video.user.thumbnail}}" alt=""></span>
+                </div>
+                <div>
+                    <div>{{video.user.username}}</div>
+                    <div>{{subscribers}} subscribers</div>
+                    <div id='container-user-comment'>{{video.descriptions}}</div>
+                </div>
+            </div>
+            <div>
+                <button id='button-subs' *ngIf="user != null && video.user.id != userID" (click)='updateSubscribe()'>SUBSCRIBE</button>
+            </div>
+        </div>
+        <hr>
+        <div id='video-container-comment'>
+            <div id='video-container-comment-header'>
+                <div id='video-container-comment-counter'>
+                    <span>{{totalComment}} Comments</span>
+                </div>
+                <div id='video-container-comment-sort' (click)='showSortFunc()'>
+                    <span><i class="fa fa-sort-amount-desc" aria-hidden="true"></i></span>
+                    <span>SORT BY</span>
+                    <div id='sort-modal' *ngIf='showSort'>
+                        <div (click)='sortByLike()'>
+                            SORT BY LIKE
+                        </div>
+                        <div (click)='sortByDate()'>
+                            SORT BY DATE
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id='input-reply' *ngIf='user'>
+                <img src="{{thumbnail}}" alt="">
+                <input type="text" name="" id="input-rep" placeholder="Reply">
+                <button (click)="createVideoReply()">COMMENT</button>
+            </div>
+            <div class="card">
+                <div *ngFor="let comment of replies, let i = index">
+                    <app-video-reply *ngIf='i < commentkey' [comment] = "comment"></app-video-reply>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id='list-container'>
+        <div class="header">
+            <input type="checkbox" id='autoplayVal' (click)='AutoPlayCheck()'> AutoPlay
+        </div>
+        <hr>
+        <div class="card">
+            <div *ngFor="let suggestion of suggestion, let i = index">
+                <app-video-play-list *ngIf='i < lastKey' [suggestion] = "suggestion"></app-video-play-list>
+            </div>
+        </div>
+        <div class="footer"></div>
+    </div>
+    <div id="playlist-modal" *ngIf="showPlaylistModal">
+         <div class='playlist-inside'>
+            <div class='playlist-inside-header'>
+                Playlist
+            </div>
+            <hr>
+            <div class='content'>
+                <div class='item' *ngFor="let playlist of playlists" (click)="inputToPlaylist(playlist.playlistID)">
+                    {{playlist.playlistHeader}}
+                </div>
+                <div class="item" (click)='showInputNewPlaylistFunc()'>
+                   CreatePlaylist
+                </div>
+                <hr>
+            </div>
+            <div class='create' *ngIf='showInputNewPlaylist'>
+                <div class='label'>
+                    <div>
+                        title :
+                    </div>
+                    <div>
+                        access :
+                    </div>
+                    <div>
+                        description :
+                    </div>
+                </div>
+                <div class='input' >
+                    <div>
+                        <input type="text" placeholder="title" id='p-title'>
+                    </div>
+                    <div>
+                        <select name="" id="p-type">
+                            <option value="Public">Public</option>
+                            <option value="Private">Private</option>
+                        </select>
+                    </div>
+                    <div>
+                        <textarea name="" id="p-desc" cols="50" rows="10"></textarea>
+                    </div>
+                    <div>
+                        <button (click)='createNewPlaylist()'>CREATE</button>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="button">
+                <button class="cancel" (click)="showPlaylistModalFunc()">CANCEL</button>
+            </div>
+         </div>
+    </div>
+    <div id='share-modal' *ngIf='shareModal'>
+        <div id='modal'>
+            <div class="header">
+                <div>
+                    SHARE
+                </div>
+                <div (click)='shareModalFunc()'>
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="content">
+                <a [href]="'http://twitter.com/share?text=Check this Video! &url=http://localhost:4200' + router.url">
+                <i class="fa fa-twitter-square" aria-hidden="true"></i>
+                </a>
+            </div>
+            <div class="copy">
+                <div id="container-link">
+                    http://localhost:4200{{router.url}}
+                </div>
+                <button (click)='copyToClipBoard()'>copy</button>
+            </div>
+        </div>
+    </div>
+</section>

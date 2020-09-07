@@ -1,0 +1,7 @@
+<span class='cardst'>
+    <span *ngFor="let video of videos, let i = index">
+        <app-video-box *ngIf='i < lastKey' [video] ="video"></app-video-box>
+    </span>
+</span>
+<div class="footer"></div>
+

@@ -1,0 +1,60 @@
+#community-comment-part {
+  display: flex;
+  justify-content: flex-start;
+  border: 1px solid;
+  border-color: gainsboro;
+  padding: 5%;
+  margin-bottom: 5%;
+}
+#community-comment-part #part-image img {
+  border-radius: 100%;
+  width: 60px;
+  height: 60px;
+}
+#community-comment-part #part-comment {
+  width: 100%;
+  margin-left: 5%;
+  padding-right: 4%;
+}
+#community-comment-part #part-comment #part-comment-header {
+  display: flex;
+  justify-content: flex-start;
+  padding-bottom: 1.5%;
+}
+#community-comment-part #part-comment #part-comment-header #title {
+  font-weight: bold;
+  font-size: 110%;
+}
+#community-comment-part #part-comment #part-comment-header #counter {
+  padding-left: 3%;
+  font-size: 90%;
+  color: #646464;
+}
+#community-comment-part #part-setting {
+  position: relative;
+}
+#community-comment-part #part-setting i {
+  transition: background-color 0.5s ease-out;
+  padding: 200% 400% 200% 400%;
+  border-radius: 100%;
+}
+#community-comment-part #part-setting i:active {
+  background-color: #8c8c8c;
+}
+
+#delete-button {
+  padding: 0.4rem 1.2rem 0.4rem 1.2rem;
+  position: absolute;
+  left: 0.8rem;
+  cursor: pointer;
+  transition: background-color 1s ease-out;
+  background-color: white;
+}
+
+#delete-button:hover {
+  background-color: #b4b4b4;
+}
+
+i:hover {
+  cursor: pointer;
+}

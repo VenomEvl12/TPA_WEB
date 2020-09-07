@@ -1,0 +1,52 @@
+<span id="row-video">
+    <span>
+        <span (click)="onSelect()" id='thumbnailx'>
+            <img src="{{video.thumbnail}}" alt="">
+        </span>
+        <div id='x'>
+            <span id='image' (click)='onSelectUser()'>
+                <img src="{{video.user.thumbnail}}" alt="">
+            </span>
+            <span>
+                <h1>{{video.title}}</h1>
+                <p>{{video.username}}</p>
+                <p>{{views}} Views • {{video.day}}/{{video.month + 1}}/{{video.year}}</p>
+            </span>
+            <div id="dot">
+                <span id='dot-icon'>
+                    <i class="fa fa-ellipsis-v" aria-hidden="true" (click)='hide()'>
+                    </i>
+                </span>
+                <div *ngIf="showSetting" id="option">
+                    <div class="option-select" (click)='showPlaylistModal()'>
+                        add to playlist
+                    </div>
+                    <hr>
+                    <div class="option-select">
+                        add to queue
+                    </div>
+                    <hr>
+                    <div class="option-select" (click)='updateModalFunc()' *ngIf="userID == video.user.id">
+                        Update Video
+                    </div>
+                    <hr>
+                    <div class="option-select" *ngIf="userID == video.user.id" (click)='deleteVideo()'>
+                        Delete Video
+                    </div>
+                </div>
+            </div>
+        </div>
+    </span>
+    <div id="playlist-modal" *ngIf='showModal'>
+        <div class='playlist-modal-content'>
+            <hr>
+            <div class='playlist-modal-list' *ngFor="let playlist of playlistTitles" (click)='clickPlaylist(playlist.playlistID)'>
+                {{playlist.playlistHeader}}
+            </div>
+            <hr>
+            <div class="playlist-modal-button">
+                <button (click)='showPlaylistModal()'>CANCEL</button>
+            </div>
+        </div>
+    </div>
+</span>

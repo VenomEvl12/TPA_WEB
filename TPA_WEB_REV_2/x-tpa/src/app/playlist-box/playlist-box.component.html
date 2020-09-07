@@ -1,0 +1,13 @@
+<div class='container-list-vid'>
+    <div id='trashbin' (click)='deleteVideo()'>
+        <i class="fa fa-trash" aria-hidden="true"></i>
+    </div>
+    <div id='container-list-head' (click)='navigate()'>
+       <img class="abc" src="{{dataVideo.thumbnail}}" alt="">
+    </div>
+    <div id='container-list-desc'>
+        <div class='title'>{{dataVideo.title}}</div>
+        <div class="username">{{dataVideo.user.username}}</div>
+    </div>
+</div>
+<hr>

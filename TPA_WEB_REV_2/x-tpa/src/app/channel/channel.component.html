@@ -1,0 +1,41 @@
+<section>
+    <div id='modal' *ngIf='bannerModal'>
+        <div class="view">
+            <div>
+                <input type="file" name="" id="image" (change)="uploadImage($event.target.files)">
+            </div>
+            <div>
+                <button id='submit' (click)='updateChannelBannerFunc()'>Change</button>
+                <button (click)='bannerModalFunc()'>cancel</button>
+            </div>
+        </div>
+    </div>
+    <div id='channel-header'>
+        <img src="{{channel.channelBanner}}" alt="">
+        <div id='banner' *ngIf='userID == userIDFromLocal' (click)='bannerModalFunc()'>
+            <i class="fa fa-cogs" aria-hidden="true"></i>
+        </div>
+    </div>
+    <div id='channel-name'>
+        <img src="{{channel.channelImage}}" alt="">
+        <div id='profile-description'>
+            <div id='inner-div'>
+                <div id='inner-div-name'>
+                    <div id='profile-name'>{{username}}</div>
+                    <div id='profile-subs'>{{userSubscribers}} subscribers</div>
+                </div>
+                <div><button ID='button-subs' *ngIf="userIDFromLocal != userID && userIDFromLocal != null" (click)="updateSubscribe()">SUBSCRIBE</button></div>
+            </div>
+        </div>
+    </div>
+    <div id='channel-navbar'>
+        <div (click)="onSelect('home')">HOME</div>
+        <div (click)="onSelect('videos')">VIDEOS</div>
+        <div (click)="onSelect('playlist')">PLAYLIST</div>
+        <div (click)="onSelect('community')">COMMUNITY</div>
+        <div (click)="onSelect('about')">ABOUT</div>
+    </div>
+    <div id='channel-content'>
+        <router-outlet></router-outlet>
+    </div>
+</section>

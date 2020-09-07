@@ -1,0 +1,37 @@
+section {
+  font-family: arial, san-serif;
+  padding: 5% 13% 3% 5%;
+}
+
+#community-comment {
+  padding-right: 4%;
+  width: 100%;
+}
+
+#post-comment {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#post-comment img {
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+}
+#post-comment input {
+  width: 35rem;
+  height: 2rem;
+  font-size: 110%;
+  background: whitesmoke;
+  border: 0;
+  border-bottom: solid 2px #a0a0a0;
+  outline: none;
+}
+#post-comment button {
+  background-color: #eb0000;
+  border: none;
+  border-radius: 5%;
+  padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+  color: white;
+}

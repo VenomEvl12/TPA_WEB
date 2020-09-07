@@ -1,0 +1,22 @@
+type playlistSubscribe {
+    playlistID: ID!
+    userID: ID!
+    subscribe: Boolean!
+}
+
+input newPlaylistSubscribe{
+    playlistID: ID!
+    userID: ID!
+}
+
+extend type Query {
+    retrievePlaylistSub(userID: ID!, playlistID: ID!): playlistSubscribe!
+    retrieveAllPlaylistSubs(userID: ID!): [playlistSubscribe!]!
+}
+
+extend type Mutation {
+    createPlaylistSub(input: newPlaylistSubscribe!): playlistSubscribe!
+    updatePlaylistSub(userID: ID!, playlistID: ID!): playlistSubscribe!
+    deletePlaylistSub(userID: ID!, playlistID: ID!): Boolean!
+    deleteAllPlaylistSubs(playlistID: ID!): Boolean!
+}

@@ -1,0 +1,9 @@
+<div id="sidebar-list">
+    <span class="span-icon" (click)="goTo('home')"><img src="../../assets/home.png" alt=""></span>
+    <span class="span-icon" (click)="goTo('trending')"><img src="../../assets/trending.png" alt=""></span>
+    <span class="span-subscription" (click)="goTo('subscriptions')"><img src="../../assets/subscriber.png" alt=""></span>
+    <span class="span-icon" *ngIf='user' (click)="myChannel()">
+        <i class="fa fa-user-circle" aria-hidden="true"></i>
+        <p>My Channel</p>
+    </span>
+</div>

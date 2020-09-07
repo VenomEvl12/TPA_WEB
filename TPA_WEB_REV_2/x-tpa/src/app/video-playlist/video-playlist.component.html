@@ -1,0 +1,102 @@
+<section>
+    <div id='container-detail'>
+        <div>
+            <img src="{{thumbnail}}" alt="">
+        </div>
+        <div id='container-detail-content'>
+            <div id='container-detail-content-header' (click)='showTitleUpdateVal()' *ngIf='showTitleUpdate == false'>
+                {{title}}
+            </div>
+            <div *ngIf='showTitleUpdate == true && localuserID == playlistUser'>
+                <input type="text" id='input-title' style="font-size: 1.8rem; margin-bottom: 0.5rem;">
+                <button (click)='updateTitle()'>update</button>
+                <button (click)='showTitleUpdateVal()'>cancel</button>
+            </div>
+            <div>
+                <span>{{playlist.totalVideo}} videos •</span>
+                <span> {{views}} views</span>
+            </div>
+            <div>
+                <span id='share'>{{playlistType}}</span>
+                <span id='config' (click)='showUpdateType()' *ngIf='localuserID == playlistUser'>
+                    <i class="fa fa-cog" aria-hidden="true"></i>
+                </span>
+                <span class="config-modal" *ngIf="showUpdate">
+                    <select name="" id="type-choice">
+                        <option value="Public">Public</option>
+                        <option value="Private">Private</option>
+                    </select>
+                    <button style="margin-left: 1rem;" (click)='updateType()'>update</button>
+                </span>
+            </div>
+            <div id='icon'>
+                <span><i class="fa fa-random" aria-hidden="true"></i></span>
+                <span><i class="fa fa-share" aria-hidden="true" (click)='shareModalFunc()'></i></span>
+                <span><i class="fa fa-ellipsis-h" aria-hidden="true"></i></span>
+            </div>
+            <div>
+                <div *ngIf='showDescription == false' (click)='showDescriptionUpdate()'>
+                    {{desc}}
+                </div>
+                <div *ngIf='showDescription == true && localuserID == playlistUser'>
+                    <textarea name="" id="description" cols="45" rows="5" style="resize: none;"></textarea>
+                    <button (click)='updateDesc()'>Update</button>
+                    <button (click)='showDescriptionUpdate()'>Cancel</button>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div id='container-detail-user'>
+            <img src="{{user.thumbnail}}" alt="" (click)='navigate()'>
+            <span>{{user.username}}</span>
+            <span><button id='button-subs' *ngIf='localuserID != playlistUser && user != null' (click)='updateSubscribe()'>SUBSCRIBE</button></span>
+            <span><button id='button-add-playlist' (click)='updateAddToPlaylist()' *ngIf='localuserID != playlistUser && user != null'>ADD TO PLAYLIST</button></span>
+        </div>
+    </div>
+    <div id='container-list'>
+        <div id='container-list-header'>
+            <span id='sort'>
+                <span (click)='showSortFunc()' class="button">
+                    <i class="fa fa-sort" aria-hidden="true"></i> SORT BY
+                </span>
+                <div id='modal' *ngIf='showSort'>
+                    <div class="select" (click)='sortByViews()'>Sort By Popularity</div>
+                    <div class="select" (click)='sortByAddToPlaylist()'>Sort By Date Add To Playlist</div>
+                    <div class="select" (click)='sortByVideoPublish()'>Sort By Published video</div>
+                </div>
+            </span>
+        </div>
+        <hr>
+        <div cdkDropList (cdkDropListDropped)="drop($event)" class="example-list">
+            <div class="card">
+                <div  *ngFor="let video of listVideo, let i = index" cdkDrag class='example-box' >
+                    <app-playlist-box *ngIf='i < lastKey'  [video]='video' ></app-playlist-box>
+                </div>
+            </div>
+        </div>
+        <div class="footer"></div>
+    </div>
+    <div id='share-modal' *ngIf='shareModal'>
+        <div id='modal'>
+            <div class="header">
+                <div>
+                    SHARE
+                </div>
+                <div (click)='shareModalFunc()'>
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="content">
+                <a [href]="'http://twitter.com/share?text=Check this Video! &url=http://localhost:4200' + router.url">
+                <i class="fa fa-twitter-square" aria-hidden="true"></i>
+                </a>
+            </div>
+            <div class="copy">
+                <div id="container-link">
+                    http://localhost:4200{{router.url}}
+                </div>
+                <button (click)='copyToClipBoard()'>copy</button>
+            </div>
+        </div>
+    </div>
+</section>

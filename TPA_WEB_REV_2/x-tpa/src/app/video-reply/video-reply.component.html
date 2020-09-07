@@ -1,0 +1,44 @@
+<div id='video-container-comment-content'>
+    <div class='comment-flex'>
+        <div id='content-user'>
+            <div>
+                <img src="{{comment.user.thumbnail}}" alt="">
+            </div>
+        </div>
+        <div id='content-content'>
+            <div>
+                <span>
+                    {{comment.user.username}}
+                </span>
+                <span>
+                    {{month}} month ago
+                </span>
+            </div>
+            <div>
+                <p>
+                    {{comment.description}}
+                </p>
+            </div>
+            <div class = 'thumbs'>
+                <span><i class="fa fa-thumbs-up" aria-hidden="true" (click)='updateLikeVal()'></i></span>
+                <span>{{like}}</span>
+                <span><i class="fa fa-thumbs-down" aria-hidden="true" (click)='updateDislikeVal()'></i></span>
+                <span>{{dislike}}</span>
+                <span (click)='hide()' id='testa'> REPLY </span>
+            </div>
+        </div>
+    </div>
+    <div class='replies'>
+        <div id='input-reply' *ngIf='user && replyShow'>
+            <img src="{{thumbnail}}" alt="">
+            <input (input)="komen = $event.target.value" type="text" name="" id="input-rep" placeholder="Reply">
+            <button (click)="createReplyReplies()">COMMENT</button>
+        </div>
+        <div *ngIf="totalreplyReplies != 0">
+            <b style="color: blue" (click)="showReply()">Show Reply v, {{totalreplyReplies}} replies</b>
+        </div>
+        <div *ngIf='replyRepliesShow'>
+            <app-video-reply-replies *ngFor="let replies of replyReplies"[replies] = "replies"></app-video-reply-replies>
+        </div>
+    </div>
+</div>

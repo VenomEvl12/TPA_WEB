@@ -1,0 +1,36 @@
+<span class="video-list" >
+    <div>
+        <img src="{{video.thumbnail}}" alt="" (click)= "onSelect()">
+    </div>
+    <div id='desc'>
+        <div class="header" (click)= "onSelect()">
+            <span><h2>{{video.title}}</h2></span>
+            <div class='middle'>
+                <span>{{video.user.username}} | </span>
+                <span>
+                    {{views}} views • {{video.day}}/{{video.month}}/{{video.year}}
+                </span>
+            </div>
+            <span class='bottom'>
+                {{video.descriptions}}
+            </span>
+        </div>
+        <div>
+            <div id="dot">
+                <span id='dot-icon'>
+                    <i class="fa fa-ellipsis-v" aria-hidden="true" (click)='hide()'>
+                    </i>
+                </span>
+                <div *ngIf="showSetting" id="option">
+                    <div class="option-select" (click)='showModalFunc()'>
+                        add to playlist
+                    </div>
+                    <hr>
+                    <div class="option-select">
+                        add to queue
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</span>

@@ -1,0 +1,16 @@
+<section>
+    <div id='post-comment' *ngIf='userID == localUserID'>
+        <div>
+            <img src="{{thumbnail}}" alt="">
+        </div>
+        <div>
+            <input type="text" name="" id="input-community">
+        </div>
+        <div>
+            <button (click)="createCommunity()">COMMENT</button>
+        </div>
+    </div>
+    <div id='community-comment'>
+        <app-community-comment *ngFor="let comment of comments" [comment]="comment"></app-community-comment>
+    </div>
+</section>

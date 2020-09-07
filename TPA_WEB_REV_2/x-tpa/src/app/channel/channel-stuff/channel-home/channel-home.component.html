@@ -1,0 +1,48 @@
+<section>
+    <div id='content'>
+        <div *ngIf="recentVideos != null">
+            <div class='name'>
+                Recent Upload
+            </div>
+            <div id='upload'>
+                <div>
+                    <video src="{{recentVideos.sourceLink}}" autoplay controls></video>
+                </div>
+                <div id='recent-upload'>
+                    <div id='recent-upload-header'>
+                        {{recentVideos.title}}
+                    </div>
+                    <div id='recent-upload-counter'>
+                        <span> {{recentVideos.views}} views</span>
+                        <span> • </span>
+                        <span>{{recentVideos.day}}/{{recentVideos.month}}/{{recentVideos.year}}</span>
+                    </div>
+                    <div id='recent-upload-comment'>
+                        {{recentVideos.descriptions}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class='name'>
+            Videos
+        </div>
+        <div id='list'>
+            <div id='video-box'>
+                <app-video-box *ngFor="let video of videos" [video]="video"></app-video-box>
+            </div>
+        </div>
+        <div id='show-more-video' (click)='navigate()'>
+            SHOW MORE VIDEO
+        </div>
+        <hr>
+        <div class='name'>
+            Created Playlist
+        </div>
+        <div id='playlist'>
+            <div  *ngFor="let playlist of playlists">
+                <app-channel-playlist-box [playlist]="playlist"></app-channel-playlist-box>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,127 @@
+section {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: flex-start;
+  padding: 3% 15% 5% 0;
+}
+section div {
+  padding-right: 3%;
+}
+
+#content {
+  width: 600%;
+}
+#content .name {
+  font-weight: bold;
+  padding-bottom: 5%;
+  font-size: 120%;
+}
+#content hr {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+#content #upload {
+  display: flex;
+  justify-content: flex-start;
+}
+#content #upload video {
+  width: 400px;
+}
+#content #upload #recent-upload {
+  width: 100%;
+}
+#content #upload #recent-upload #recent-upload-header {
+  font-weight: bold;
+}
+#content #upload #recent-upload #recent-upload-counter {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  color: #828282;
+  font-size: 90%;
+}
+#content #list {
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 2%;
+}
+#content #list video {
+  width: 300px;
+}
+#content #list #recent-upload {
+  width: 100%;
+}
+#content #list #recent-upload #recent-upload-header {
+  font-weight: bold;
+}
+#content #list #recent-upload #recent-upload-counter {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  color: #828282;
+  font-size: 90%;
+}
+
+#community-preference {
+  width: 60%;
+}
+#community-preference #featured-header {
+  font-size: 120%;
+  font-weight: bold;
+  color: #8c8c8c;
+}
+#community-preference #featured-content {
+  padding-top: 10%;
+}
+#community-preference #featured-content #featured-content-user {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+#community-preference #featured-content #featured-content-user img {
+  width: 30px;
+  height: 30px;
+  background-color: #787878;
+  border-radius: 100%;
+  padding: 20%;
+}
+#community-preference #featured-content #featured-content-name {
+  padding-left: 15%;
+  font-weight: bold;
+}
+#community-preference #featured-content button {
+  color: #535353;
+  padding: 2% 8% 2% 5%;
+  font-weight: bold;
+  background-color: #e6e6e6;
+  border: 0;
+  border-radius: 5px;
+}
+
+#playlist {
+  display: flex;
+  justify-content: flex-start;
+}
+#playlist #playlist-main #playlist-video video {
+  width: 250px;
+}
+#playlist #playlist-desc #desc-header {
+  padding-top: 1%;
+  padding-bottom: 1%;
+  font-size: 110%;
+  font-weight: bold;
+}
+#playlist #playlist-desc #desc-update {
+  padding-bottom: 0.5%;
+  font-size: 95%;
+  color: #787878;
+}
+#playlist #playlist-desc #desc-button {
+  font-weight: bold;
+  color: #646464;
+  font-size: 95%;
+}
+
+#video-box {
+  width: 200%;
+}

@@ -1,0 +1,64 @@
+<section>
+    <div id='description'>
+        <div>
+            <div class='description-header'>
+                <div>
+                    Description
+                </div>
+                <div>
+                    <span *ngIf="userID == userIDlocal" (click)="hideDescription()">
+                        <i class="fa fa-cog" aria-hidden="true"></i>
+                    </span>
+                </div>
+            </div>
+            <div>
+                <div *ngIf="showEdit == false">
+                    {{description}}
+                </div>
+                <div *ngIf="showEdit == true">
+                    <div>
+                        <textarea name="" id="inputDesc" cols="75" rows="10" style="resize: none;"></textarea>
+                    </div>
+                    <button (click)="updateDescription()">UPDATE DESCRIPTION</button>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div>
+            <div class='description-header'>
+                Details
+            </div>
+            <div id='details-description'>
+                Location : {{channel.location}}
+            </div>
+        </div>
+        <hr>
+        <div>
+            <div class="description-header">
+                Links
+            </div>
+            <div>
+                <a href="main/home">youtube</a>
+            </div>
+        </div>
+    </div>
+    <div id='counter'>
+        <div class='description-header'>
+            Stats
+        </div>
+        <hr>
+        <div>
+            Joined {{joinDate}}
+        </div>
+        <hr>
+        <div>
+            {{totalViews}} Views
+        </div>
+        <hr>
+        <div id='flag'>
+            <span>
+                <i class="fa fa-flag" aria-hidden="true"></i>
+            </span>
+        </div>
+    </div>
+</section>

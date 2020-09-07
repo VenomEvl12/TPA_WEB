@@ -1,0 +1,37 @@
+<section>
+    <div id="playlist-modal" *ngIf='showPlaylistModal'>
+        <div class='playlist-inside'>
+           <div class='playlist-inside-header'>
+               Playlist
+           </div>
+           <hr>
+           <div class='content'>
+               <div class='item' *ngFor="let playlist of playlists" (click)="inputToPlaylist(playlist.playlistID)">
+                   {{playlist.playlistHeader}}
+               </div>
+           </div>
+           <hr>
+           <div class="button">
+               <button class="cancel" (click)="showPlaylistModalFunc()">CANCEL</button>
+           </div>
+        </div>
+   </div>
+    <div class="recomendation">
+        <span>
+            <img src="../../assets/gpad.png" alt="" (click)="onSelect('Gaming')">
+        </span>
+        <span>
+            <img src="../../assets/music.png" alt="" (click)="onSelect('Music')">
+        </span>
+        <span>
+            <img src="../../assets/news.png" alt="" (click)="onSelect('News')">
+        </span>
+        <span>
+           <img src="../../assets/movie.png" alt="" (click)="onSelect('Movie')">
+        </span>
+    </div>
+    <hr>
+    <div *ngFor="let video of videos, let i = index">
+        <app-video-genre *ngIf="(i < 20)" [video]='video' (showModal)='showModalFunc($event)' (videoID)="insertVideoIdFunc($event)"></app-video-genre>
+    </div>
+</section>

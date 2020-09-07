@@ -1,0 +1,362 @@
+<header>
+  <div id='sidebar-hide'>
+    <div id='sidebar'>
+      <div class='container'>
+        <div class='container-header'>
+          <span (click)='hide()'>
+            <img src="../../assets/hamburger-menu.png" alt="" class='icon'>
+          </span>
+          <a href="main/home">
+            <span>
+              <img src="../../assets/logo yourjube logo.png" alt="" class="yutub">
+            </span>
+          </a>
+        </div>
+        <hr>
+        <div class='container-title'>
+          <a href="main/home">
+            <div>
+              <span>
+               <img src="../../assets/sidebar/_home.png" alt="">
+              </span>
+              <span class='word'>
+               Home
+              </span>
+            </div>
+          </a>
+          <a href="main/trending">
+            <div>
+             <span>
+               <img src="../../assets/sidebar/_trending.png" alt="">
+              </span>
+              <span class='word'>
+               Trending
+              </span>
+            </div>
+          </a>
+          <a href="main/subscriptions">
+            <div>
+             <span>
+               <img src="../../assets/sidebar/_subscribtions.png" alt="">
+              </span>
+              <span class='word'>
+               Subscriptions
+              </span>
+            </div>
+          </a>
+        </div>
+        <hr>
+        <div class='container-content'>
+            <div *ngFor="let playli of playlist" class="container-content-header">
+              <div (click)="moveToPlaylist(playli.playlistID)">{{playli.playlistHeader}}</div>
+            </div>
+            <div *ngFor="let playli of playlists" class="container-content-header">
+              <div (click)="moveToPlaylist(playli.playlistID)">{{playli.playlistHeader}}</div>
+            </div>
+            <div (click)="showCreatePlaylist()" class="container-content-header">
+              <div>
+                Create Playlist
+              </div>
+            </div>
+        </div>
+        <hr>
+        <div class="container-subscribe">
+          <div *ngFor="let channel of channels, let i = index" class="subscribe" (click)='navigation(channel.id)'>
+            <ng-container *ngIf='i < lastKey'>
+              <div>
+                <img src="{{channel.thumbnail}}" alt="">
+              </div>
+              <div class="username">
+                {{channel.username}}
+              </div>
+            </ng-container>
+          </div>
+          <div *ngIf='totalChannel >= 10' class="show-more">
+            Show More
+          </div>
+        </div>
+        <hr>
+        <div class="container-premium">
+          <a href="main/premium">
+          <div>
+            <span>
+              <img src="../../assets/sidebar/_premium.png" alt="">
+            </span>
+            <span class='word'>
+             Premium
+            </span>
+          </div>
+          </a>
+          <a href="main/category/Gaming">
+            <div>
+              <span>
+              <img src="../../assets/gpad.png" alt="">
+              </span>
+              <span class='word'>
+              Game
+              </span>
+            </div>
+          </a>
+          <a href="main/category/Music">
+            <div>
+              <span>
+              <img src="../../assets/music.png" alt="">
+              </span>
+              <span class='word'>
+              Music
+              </span>
+            </div>
+          </a>
+          <a href="main/category/News">
+            <div>
+              <span>
+               <img src="../../assets/news.png" alt="">
+              </span>
+              <span class='word'>
+               New
+              </span>
+            </div>
+          </a>
+          <a href="main/category/Movie">
+            <div>
+              <span>
+               <img src="../../assets/movie.png" alt="">
+              </span>
+              <span class='word'>
+               Movie
+              </span>
+            </div>
+          </a>
+          <a href="main/category/Sport">
+            <div>
+              <span>
+                <i class="fa fa-futbol-o" aria-hidden="true"></i>
+              </span>
+              <span class="word">
+                Sport
+              </span>
+            </div>
+          </a>
+          <a href ="main/category/Commedy">
+            <div>
+              <span>
+                <i class="fa fa-smile-o" aria-hidden="true"></i>
+              </span>
+              <span class="word">
+                Commedy
+              </span>
+            </div>
+          </a>
+        </div>
+        <hr>
+        <div class="container-link">
+          <a href="https://www.youtube.com/about/">About</a>
+          <a href="https://www.youtube.com/howyoutubeworks/policies/copyright/">Copyright</a>
+          <a href="https://www.youtube.com/t/contact_us">Contact Us</a>
+          <a href="https://www.youtube.com/creators/">Creators</a>
+          <br><br><br>
+          © 2020 YouRJube
+        </div>
+      </div>
+      <div class='blank'>
+      </div>
+    </div>
+  </div>
+  <div id='setting'>
+    <div class='setting-container'>
+      <div id='setting-container-main'>
+        <div (click)='HideLocation()'>
+          <span><img src="../../assets/setting/_world.png" alt=""></span>
+          <span>Location</span>
+          <span class='setting-container-arrow'>></span>
+        </div>
+        <div (click)='HideShortcut()'>
+          <span><img src="../../assets/setting/_keyboard.png" alt=""></span>
+          <span>Shortcut</span>
+        </div>
+        <hr>
+        <div (click)='HideRestricted()'>
+          <span>Restricted Mode</span>
+        </div>
+      </div>
+      <div id='setting-container-location'>
+        <div class='back' (click)='HideLocation()'>
+          <img src="../../assets/_arrow.png" alt="">
+          <span>Back</span>
+        </div>
+        <hr>
+        <div (click)="updateLocation('Jepang')">
+          <span>Japan</span>
+        </div>
+        <div (click)="updateLocation('Indonesia')">
+          <span>Indonesia</span>
+        </div>
+        <div (click)="updateLocation('USA')">
+          <span>USA</span>
+        </div>
+        <div (click)="updateLocation('China')">
+          <span>China</span>
+        </div>
+        <div (click)="updateLocation('Australia')">
+          <span>Australia</span>
+        </div>
+      </div>
+      <div id='setting-container-restricted'>
+        <div class="back" (click)='HideRestricted()'>
+          <img src="../../assets/_arrow.png" alt="">
+          <span>Back</span>
+        </div>
+        <hr>
+        <div>
+          <span>Restrited Mode</span>
+          <span id='setting-container-restricted-slider'>
+            <input type="checkbox" id="modeRestrict" (click)='updateRestricted()'>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="header-sticky">
+      <div id='nav-bar'>
+        <div id="kiri">
+          <span (click)='hide()'>
+            <img src="../assets/hamburger-menu.png" alt="" class="icon">
+          </span>
+          <a href="/main/home">
+            <span>
+              <img src="../assets/logo yourjube logo.png" alt="" id="logo">
+            </span>
+          </a>
+        </div>
+        <div id="search">
+          <span id="search-box">
+            <input type="text" placeholder="search" id='search-keyword' (keyup.enter)='toKeyword()' (input)="doColorSearch($event.target.value)">
+            <button (click)='toKeyword()'><img src="../assets/search-button.png" alt=""></button>
+            <div *ngIf="keywordx != ''">
+              <div id='search-suggestion'  *ngFor='let suggetion of suggestions | async'>
+                <div class='suggestion' (click)="toKeywordByString(suggetion)">{{suggetion}}</div>
+              </div>
+            </div>
+          </span>
+        </div>
+        <div id="kanan">
+          <span *ngIf="!user else showuser">
+            <img src="../assets/sign-in.png" alt="" class="icon-sign-in" (click)="signInWithGoogle()">
+          </span>
+          <ng-template #showuser>
+            <span (click)='HideSetting()'>
+              <img src="../../assets/setting.png" alt="" class="icon-user">
+            </span>
+            <a href="/main/upload">
+              <span class="span-upload">
+                <img src="../assets/cv-fix.png" alt="" class="icon-user">
+              </span>
+            </a>
+            <span (click)='ShowUserChoice()'>
+              <img src="{{user.photoUrl}}" alt="" class="user-icon">
+            </span>
+            <div id='user-sign-out' *ngIf='showUser'>
+              <div  (click)="signOut()" class="component">
+                  Sign Out
+              </div>
+              <hr>
+              <div  class="component" (click)='switchAccount()'>
+                switch-account
+              </div>
+            </div>
+          </ng-template>
+        </div>    
+      </div>
+  </div>
+  <div id='shortcut'>
+    <div id='setting-shortcut'>
+      <div id='setting-shortcut-header'>
+        <h1>Keyboard shortcuts</h1>
+      </div>
+      <hr>
+      <div id='setting-shortcut-content'>
+        <div>
+          <div class='shortcut-content-header'>
+            <div>PLAYBACK</div>
+          </div>  
+          <hr> 
+          <div>
+            <div class='shortcut-content-content'>
+              <div>
+                <div>Toggle play/pause</div>
+                <div>k</div>
+              </div>
+              <hr>
+              <div>
+                <div>Rewind 10 seconds</div>
+                <div>j</div>
+              </div>
+              <hr>
+              <div>
+                <div>Fast forward 10 seconds</div>
+                <div>l</div>
+              </div>
+            </div>
+          </div> 
+        </div>
+        <div>
+          <div class="shortcut-content-header">
+            <div>GENERAL</div>
+          </div>
+          <hr>
+          <div class="shortcut-content-content">
+            <div>
+              <div>Toggle full screen</div>
+              <div>f</div>
+            </div>
+            <hr>
+            <div>
+              <div>Toggle theater mode</div>
+              <div>t</div>
+            </div>
+          </div>
+        </div>
+    </div>
+      <hr>
+      <div id='setting-shortcut-footer'>
+        <span (click)='HideShortcut()'>
+          <h2>dismiss</h2>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div id='playlist-modal' *ngIf="boolCreatePlaylist">
+    <div class="playlist-modal-content">
+      <div>
+        <h1>CREATE PLAYLIST</h1>
+      </div>
+      <hr>
+      <div class="playlist-form">
+        <div class="playlist-label">
+          <div>Title : </div>
+          <div>Access : </div>
+          <div>Description : </div>
+        </div>
+        <div class="playlist-input">
+          <div>
+            <input type="text" id='playlist-header'>
+          </div>
+          <div>
+            <select name="" id="playlist-access">
+              <option value="Public">public</option>
+              <option value= "Private">private</option>
+            </select>
+          </div>
+          <div>
+            <textarea name="" id="playlist-desc" cols="70" rows="10"></textarea>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class='playlist-button'>
+        <button class="playlist-button-create" (click)="createPlayList()">CREATE</button>
+        <button class="playlist-button-cancel" (click)='showCreatePlaylist()'>CANCEL</button>
+      </div>
+    </div>
+  </div>
+  </header>

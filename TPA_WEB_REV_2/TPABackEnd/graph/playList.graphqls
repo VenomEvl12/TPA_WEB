@@ -1,0 +1,48 @@
+type Playlist {
+    playlistID: ID!
+    userID: ID!
+    videoID: ID!
+    playlistHeader: String!
+    playlistType: Boolean!
+    description : String!
+    priorityWeight: Int!
+    datePublish: String!
+    dateAddToPlaylist: String!
+    views: Int!
+    totalVideo: Int!
+}
+
+input newPlaylist {
+    userID: ID!
+    playlistHeader: String!
+    playlistType: Boolean!
+    description : String!
+}
+
+input newVideoToPlaylist {
+    playlistID: ID!
+    userID: ID!
+    videoID: ID!
+}
+
+extend type Query{
+    playlists(userID: ID!): [Playlist!]!
+    playlistsPublic(userID: ID!): [Playlist!]!
+    priorityNumber(playlistID: ID!): Playlist!
+    playlist(playlistID: ID!): Playlist!
+    playlistListVideos(playlistID: ID!): [Playlist!]!
+    playlistsRandom(userID: ID!): [Playlist!]!
+    playlistsByKeyword(keyword: String!): [Playlist!]!
+}
+
+extend type Mutation {
+    createPlaylist(input: newPlaylist!): Playlist!
+    inputVideoToPlayList(input: newVideoToPlaylist!): Playlist!
+    updatePriorityWeight(playlistID: ID!, userID: ID!, videoID: ID!, priorityWeight: Int!): Playlist!
+    updatePlayListDescription(playlistID: ID!, userID: ID!, description: String!): Playlist!
+    updatePlayListViews(playlistID: ID!, userID: ID!): Playlist!
+    updatePlayListHeader(playlistID: ID!, userID: ID!, header: String!): Playlist!
+    updatePlaylistType(playlistID: ID!, userID: ID!,tipe: Boolean!): Playlist!
+    deleteVideo(playlistID: ID!, userID: ID!, videoID: ID!): Boolean!
+    deletePlaylist(playlistID: ID!, userID: ID!): Boolean!
+}

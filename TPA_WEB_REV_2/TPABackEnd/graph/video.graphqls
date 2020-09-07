@@ -1,0 +1,68 @@
+
+type Video {
+    videoID: ID!
+    user: User!
+    title: String
+    thumbnail: String
+    views: Int
+    day: Int
+    month: Int
+    year: Int
+    like: Int
+    dislike: Int
+    descriptions: String
+    sourceLink : String
+    category: String
+    videoLength: Int
+    location : String
+    restriction: Boolean
+    premium: Boolean
+    typePub: Boolean!
+    videoReply: [VideoReply!]!
+}
+
+extend type Query {
+    Videos(videoID: ID!): Video
+    listVideos: [Video!]!
+    videoByLocation(location: String!, restriction: Boolean!, premium: Boolean!): [Video!]!
+    videoByLocationSort(restriction: Boolean!, premium: Boolean!): [Video!]!
+    videoByCategory(category: String!, restriction: Boolean!, premium: Boolean!): [Video!]!
+    videoByUser(userID: ID!, restriction: Boolean!, premium: Boolean!): [Video!]!
+    videoTotalViews(userID: ID!): Int!
+    premiumVideos: [Video!]!
+    getLastVideos(userID: ID!, premium: Boolean!, restriction: Boolean!): Video!
+    getFiveRandomVideos(userID: ID!, restriction: Boolean!, premium: Boolean!): [Video!]!
+    getVideoByKeyword(keyword: String!): [Video!]!
+    getVideoByKeywordTopFive(keyword: String!): [Video!]!
+    retrieveAllVideos(userID: ID!): [Video!]!
+}
+
+input newVideo {
+    userID: ID!
+    title: String
+    thumbnail: String
+    day: Int
+    Month: Int
+    Year: Int
+    descriptions: String
+    sourceLink: String
+    category: String
+    VideoLength: Int
+    location: String
+    premium: Boolean
+    restriction: Boolean
+    typePub: Boolean!
+}
+
+extend  type Mutation {
+    createVideo(input: newVideo): Video
+    updateViews(VideoID: ID!): Video!
+    updateLike(VideoID: ID!, likeVal: Boolean!): Video!
+    updateDislike(VideoID: ID!, likeVal: Boolean!): Video!
+    updateDescription(VideoID: ID!, descriptions: String): Video!
+    updateRestriction(VideoID: ID!, restriction: Boolean): Video!
+    updatePremiumVideo(VideoID: ID!, premium: Boolean): Video!
+    updateVideoType(VideoID: ID!, typePub: Boolean!): Video!
+    updateVideo(VideoID: ID!, desc: String!, title: String!, thumbnail: String!, privacy: Boolean!): Video!
+    removeVideo(VideoID: ID!): Boolean!
+}

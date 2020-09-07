@@ -1,0 +1,21 @@
+<div id='search-channel'>
+    <div class='channel-content' (click)='navigate()'>
+        <div class='search-channel-image'>
+            <img src="{{user.thumbnail}}" alt="">
+        </div>
+        <div class="search-channel-desc">
+            <div class='channel-username'>
+                {{user.username}}
+            </div>
+            <div class="channel-sub">
+                {{subscribers}} Subscriber {{totalVideos}} videos
+            </div>
+            <div class="channel-desc">
+                {{channel.channelDescription}}
+            </div>
+        </div>
+    </div>
+    <div class="search-channel-subs" *ngIf="userID != null && userID != user.id">
+        <button id="button-subs" (click)="updateSubscribe()">SUBSCRIBE</button>
+    </div>
+</div>
